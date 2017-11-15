@@ -1,8 +1,5 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png"><br>
-    <router-link to="/">首页</router-link><br>
-    <router-link to="/list">列表页</router-link>
+  <div id="app" class="container">
     <router-view></router-view>
   </div>
 </template>
@@ -14,12 +11,22 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  padding: 0;
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  background: #ddd;
+  color: #666;
+  font-size: 14px;
+  font-family: "-apple-system","Open Sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.container{
+  max-width: 1600px;
+  min-height: 100%;
+  position: relative;
 }
 </style>
