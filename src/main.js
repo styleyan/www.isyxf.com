@@ -8,10 +8,8 @@ import store from './store'
 import components from './components'
 import './filter'
 import './directive'
-import iView from 'iview'
-import 'iview/dist/styles/iview.css'
+import './assets/stylus/index.styl'
 
-Vue.use(iView)
 Vue.use(components)
 Vue.use(axios)
 
