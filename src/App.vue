@@ -1,6 +1,12 @@
 <template>
   <div id="app" class="container">
-    <router-view></router-view>
+    <loading-bar></loading-bar>
+    <sidebar></sidebar>
+    <mobile-header></mobile-header>
+    <div id="main">
+      <router-view></router-view>
+    </div>
+    <my-footer></my-footer>
   </div>
 </template>
 
