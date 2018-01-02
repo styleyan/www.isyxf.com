@@ -19,21 +19,9 @@
           </a>
         </li>
         <li>
-          <a href="/about" title="关于" style="color:#fff !important;" class="">
-            <i class="iconfont icon-user"></i>
-            <span>关于</span>
-          </a>
-        </li>
-        <li>
           <a href="/link" title="友链" style="color:#fff !important;" class="">
             <i class="iconfont icon-link"></i>
             <span>友链</span>
-          </a>
-        </li>
-        <li>
-          <a href="/opensource" title="开源" style="color:#fff !important;" class="">
-            <i class="iconfont icon-stackoverflow"></i>
-            <span>开源</span>
           </a>
         </li>
       </ul>
