@@ -23,6 +23,11 @@ const routes = [
     name: 'post',
     component: resolve => require(['../../views/post/index.vue'], resolve),
   },
+  {
+    path: '/series',
+    name: 'series',
+    component: resolve => require(['../../views/series/index.vue'], resolve),
+  },
 ]
 
 export default routes

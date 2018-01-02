@@ -3,7 +3,7 @@
     <loading-bar></loading-bar>
     <sidebar></sidebar>
     <mobile-header></mobile-header>
-    <div id="main">
+    <div id="main" class="wrap-main">
       <router-view></router-view>
     </div>
     <my-footer></my-footer>
