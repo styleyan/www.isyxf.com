@@ -13,5 +13,10 @@
 <script>
 export default {
   name: 'app',
+  created() {
+    // this.$ajax.blogList().then(() => {
+    //   console.log('ddddd')
+    // })
+  },
 }
 </script>
