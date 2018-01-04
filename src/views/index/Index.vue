@@ -6,7 +6,7 @@
       <div class="meta">{{item.createTime}}</div>
       <h1 class="title"><a :href="item.url">{{item.title}}</a></h1>
       <div class="entry-content">
-        <div v-html="item.html"></div>
+        <div v-html="item.render"></div>
         <a :href="item.url">阅读更多&raquo;</a>
       </div>
     </article>
@@ -24,26 +24,17 @@ export default {
   name: 'index-page',
   data() {
     return {
-      aritcleList: [{
-        createTime: '2017-09-12 11:33:21',
-        title: 'React Native的异步',
-        html: '<p>RN的JSBridge是一个完成度相当高的东西。它带来了开发速度的巨大提升，相应地也导致了运行原生代码时总是异步的这一特征，本文讨论一下RN中异步的一些场景和异步带来的一些问题。</p>',
-        url: '/post',
-      }, {
-        createTime: '2017-09-12 11:33:21',
-        title: 'React Native的异步',
-        html: '<p>RN的JSBridge是一个完成度相当高的东西。它带来了开发速度的巨大提升，相应地也导致了运行原生代码时总是异步的这一特征，本文讨论一下RN中异步的一些场景和异步带来的一些问题。</p>',
-        url: '/post',
-      }, {
-        createTime: '2017-09-12 11:33:21',
-        title: 'React Native的异步',
-        html: '<p>RN的JSBridge是一个完成度相当高的东西。它带来了开发速度的巨大提升，相应地也导致了运行原生代码时总是异步的这一特征，本文讨论一下RN中异步的一些场景和异步带来的一些问题。</p>',
-        url: '/post',
-      }],
+      aritcleList: [],
     }
   },
   created() {
     console.log('这是个测试')
+    this.$ajax.blogList({
+      pageActive: 1,
+      pageSize: 10,
+    }).then((result) => {
+      this.aritcleList = result.list
+    })
   },
 }
 </script>

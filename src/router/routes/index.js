@@ -21,7 +21,14 @@ const routes = [
   {
     path: '/post',
     name: 'post',
-    component: resolve => require(['../../views/post/index.vue'], resolve),
+    component: resolve => require(['../../views/post/router-view.vue'], resolve),
+    children: [
+      {
+        name: 'post-index',
+        path: ':url',
+        component: resolve => require(['../../views/post/article/index.vue'], resolve),
+      },
+    ],
   },
   {
     path: '/series',

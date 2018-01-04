@@ -49,3 +49,33 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: 'article-detail',
+  data() {
+    return {
+      formValidate: 'sdfsdf',
+    }
+  },
+  created() {
+    const url = this.$route.path
+    if (url) {
+      this.blogDetail(url)
+    }
+  },
+  methods: {
+    /**
+     * 编辑文章，初始化文章信息
+     * @param {String} url - 文章地址
+     */
+    blogDetail(url) {
+      console.log(url)
+      this.$ajax.blogDetail({url}).then((result) => {
+        console.log(result)
+      }).catch(() => {
+        this.$Message.error('服务器错误了')
+      })
+    },
+  },
+}
+</script>
