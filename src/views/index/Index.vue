@@ -4,11 +4,9 @@
       v-for="(item, key) in aritcleList"
       :key="key">
       <div class="meta">{{item.createTime}}</div>
-      <h1 class="title"><a :href="item.url">{{item.title}}</a></h1>
-      <div class="entry-content">
-        <div v-html="item.render"></div>
-        <a :href="item.url">阅读更多&raquo;</a>
-      </div>
+      <h1 class="title"><a :href="`/article/${item.articleId}`">{{item.title}}</a></h1>
+      <div class="entry-content" v-html="item.preMore"></div>
+      <a :href="`/article/${item.articleId}`">阅读更多&raquo;</a>
     </article>
     <nav class="pagination">
       <a href="/?page=2" class="next">下一页 &raquo;</a>
@@ -28,7 +26,6 @@ export default {
     }
   },
   created() {
-    console.log('这是个测试')
     this.$ajax.blogList({
       pageActive: 1,
       pageSize: 10,
