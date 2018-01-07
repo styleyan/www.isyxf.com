@@ -8,12 +8,7 @@
       <div class="entry-content" v-html="item.preMore"></div>
       <a :href="`/article/${item.articleId}`">阅读更多&raquo;</a>
     </article>
-    <nav class="pagination">
-      <a href="/?page=2" class="next">下一页 &raquo;</a>
-      <div class="center">
-        <a href="/archive" class="">博客归档</a>
-      </div>
-    </nav>
+    <pagination></pagination>
   </section>
 </template>
 

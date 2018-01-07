@@ -8,6 +8,79 @@
   top: 0
   width: 270px
   z-index: 1
+
+  li, ul {
+    list-style: none
+    margin: 0
+    padding: 0
+  }
+
+  .profile {
+    padding: 40px 20px 10px 0
+
+    a, img {
+      border-radius: 76px
+      height: 152px
+      overflow: hidden
+      width: 152px
+    }
+
+    a {
+      display: block
+      margin: 0 auto
+    }
+
+    span {
+      color: #999
+      display: block
+      font-size: 18px
+      padding: 10px 0
+      text-align: center
+    }
+  }
+
+  .buttons {
+    margin: 0 0 20px
+
+    li {
+      display: block
+      font-size: 14px
+      height: 45px
+      line-height: 45px
+      width: 100%
+
+      a {
+        color: #999
+        display: block
+        padding-left: 50px
+        text-decoration: none
+        -webkit-transition: color .2s cubic-bezier(.4, .01, .165, .99)
+        transition: color .2s cubic-bezier(.4, .01, .165, .99)
+
+        i, span {
+          display: inline-block
+          vertical-align: middle
+        }
+
+        i {
+          font-size: 16px
+          height: 46px
+          line-height: 46px
+          text-align: center
+          width: 25px
+        }
+
+        &:hover {
+          color: rgba(153, 153, 153, .8)
+        }
+      }
+
+      a.inline {
+        display: inline-block
+        width: 40px
+      }
+    }
+  }
 }
 
 #sidebar-mask {
@@ -20,80 +93,4 @@
   right: 0
   top: 0
   z-index: 999
-}
-
-#sidebar li,
-#sidebar ul {
-  list-style: none
-  margin: 0
-  padding: 0
-}
-
-#sidebar .profile {
-  padding: 40px 20px 10px 0
-}
-
-#sidebar .buttons {
-  margin: 0 0 20px
-}
-
-#sidebar .profile a,
-#sidebar .profile img {
-  border-radius: 76px
-  height: 152px
-  overflow: hidden
-  width: 152px
-}
-
-#sidebar .profile a {
-  display: block
-  margin: 0 auto
-}
-
-#sidebar .profile span {
-  color: #999
-  display: block
-  font-size: 18px
-  padding: 10px 0
-  text-align: center
-}
-
-#sidebar .buttons li {
-  display: block
-  font-size: 14px
-  height: 45px
-  line-height: 45px
-  width: 100%
-}
-
-#sidebar .buttons li a {
-  color: #999
-  display: block
-  padding-left: 50px
-  text-decoration: none
-  -webkit-transition: color .2s cubic-bezier(.4, .01, .165, .99)
-  transition: color .2s cubic-bezier(.4, .01, .165, .99)
-}
-
-#sidebar .buttons li a i,
-#sidebar .buttons li a span {
-  display: inline-block
-  vertical-align: middle
-}
-
-#sidebar .buttons li a i {
-  font-size: 16px
-  height: 46px
-  line-height: 46px
-  text-align: center
-  width: 25px
-}
-
-#sidebar .buttons li a:hover {
-  color: rgba(153, 153, 153, .8)
-}
-
-#sidebar .buttons li a.inline {
-  display: inline-block
-  width: 40px
 }
