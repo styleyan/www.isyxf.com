@@ -20,7 +20,7 @@
         </li>
         <li>
           <a href="/series" class="router-link-active" style="color:#fff !important;">
-            <i class="iconfont icon-archive"></i>
+            <i class="iconfont icon-special"></i>
             <span>专题</span>
           </a>
         </li>

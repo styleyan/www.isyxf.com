@@ -8,7 +8,7 @@
       <div class="entry-content" v-html="item.preMore"></div>
       <a :href="`/article/${item.articleId}`">阅读更多&raquo;</a>
     </article>
-    <pagination></pagination>
+    <pagination :archive="true"></pagination>
   </section>
 </template>
 
