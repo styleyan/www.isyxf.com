@@ -8,7 +8,7 @@
       <div class="entry-content" v-html="item.preMore"></div>
       <a :href="`/article/${item.articleId}`">阅读更多&raquo;</a>
     </article>
-    <pagination :archive="true"></pagination>
+    <pagination :prevTo="prevTo" :nextTo="nextTo" :archive="true"></pagination>
   </section>
 </template>
 
@@ -18,15 +18,27 @@ export default {
   data() {
     return {
       aritcleList: [],
+      prevTo: {query: { pg: 3 }, text: '上一页'},
+      nextTo: {query: { pg: 5 }, text: '下一页'},
     }
   },
   created() {
-    this.$ajax.blogList({
-      pageActive: 1,
-      pageSize: 10,
-    }).then((result) => {
-      this.aritcleList = result.list
-    })
+    this.getData()
+  },
+  watch: {
+    '$router'(to, from) {
+      console.log(to)
+    },
+  },
+  methods: {
+    getData() {
+      this.$ajax.blogList({
+        pageActive: 1,
+        pageSize: 10,
+      }).then((result) => {
+        this.aritcleList = result.list
+      })
+    },
   },
 }
 </script>
