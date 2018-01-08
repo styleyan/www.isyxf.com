@@ -4,7 +4,7 @@
     <sidebar></sidebar>
     <mobile-header></mobile-header>
     <div id="main" class="wrap-main">
-      <router-view></router-view>
+      <router-view :pg="pg"></router-view>
     </div>
     <my-footer></my-footer>
   </div>
@@ -13,10 +13,10 @@
 <script>
 export default {
   name: 'app',
-  created() {
-    // this.$ajax.blogList().then(() => {
-    //   console.log('ddddd')
-    // })
+  computed: {
+    pg() {
+      return Number.parseInt(this.$route.query.pg) || 1
+    },
   },
 }
 </script>

@@ -15,29 +15,60 @@
 <script>
 export default {
   name: 'index-page',
+  props: {
+    pg: {
+      type: Number,
+      default: 1,
+    },
+  },
   data() {
     return {
       aritcleList: [],
-      prevTo: {query: { pg: 3 }, text: '上一页'},
-      nextTo: {query: { pg: 5 }, text: '下一页'},
+      prevTo: null,
+      nextTo: null,
     }
   },
-  created() {
-    this.getData()
-  },
   watch: {
-    '$router'(to, from) {
-      console.log(to)
+    pg(page) {
+      this.getData(page)
     },
   },
+  created() {
+    this.getData(this.pg)
+  },
   methods: {
-    getData() {
+    /**
+     * 获取当前页数据
+     * @param {Number} page - 页码
+     */
+    getData(page) {
       this.$ajax.blogList({
-        pageActive: 1,
+        pageActive: page,
         pageSize: 10,
       }).then((result) => {
         this.aritcleList = result.list
+        this.setPage(result.pageActive, result.pageSize, result.pageTotal)
       })
+    },
+    /**
+     * 设置翻页
+     * @param {Number} page - 当前页码
+     * @param {Number} size - 当前页数量
+     * @param {Number} total - 总条数
+     */
+    setPage(page, size, total) {
+      if (page <= 1) {
+        this.prevTo = null
+      } else {
+        this.prevTo = {query: { pg: 1 }, text: '上一页'}
+      }
+      const allPage = Math.ceil(total / size)
+
+      if (page >= allPage) {
+        this.nextTo = null
+      } else {
+        this.nextTo = {query: { pg: ++page }, text: '下一页'}
+      }
     },
   },
 }

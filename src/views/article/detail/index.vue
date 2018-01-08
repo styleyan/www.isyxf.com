@@ -13,10 +13,7 @@
         <p> 发表于 <i>2017-09-12 11:33:21</i> ， 添加在分类「 <a data-cate="前端"><code class="notebook">前端</code></a> 」下 ，并被添加「 <a href="/tag/react%20native" class="" data-tag="react native"><code class="notebook">react native</code></a> 」标签 ，最后修改于 <i>2017-10-02 19:37:26</i></p>
       </div>
     </article>
-    <nav class="pagination">
-      <a href="/post/mac-karabiner-elements-for-keyborad" class="prev">&laquo; Mac外接键盘利器: karabiner-elements</a>
-      <a href="/post/something-about-headless-chrome" class="next">Headless Chrome目前的一些问题 &raquo;</a>
-    </nav>
+    <pagination :prevTo="prevTo" :nextTo="nextTo"></pagination>
     <div class="comments">
       <div id="disqus_thread"></div>
     </div>
@@ -27,6 +24,14 @@ export default {
   name: 'article-detail',
   data() {
     return {
+      prevTo: {
+        path: '/post/mac-karabiner-elements-for-keyborad',
+        text: 'Mac外接键盘利器:',
+      },
+      nextTo: {
+        path: '/post/something-about-headless-chrome',
+        text: 'Headless Chrome目前的一些问题',
+      },
       formValidate: {},
       url: `${location.origin}${this.$route.path}`,
     }
