@@ -22,25 +22,27 @@
 <script>
 export default {
   name: 'article-detail',
+  props: {
+    articleId: {
+      type: String,
+      default: '',
+    },
+  },
   data() {
     return {
-      prevTo: {
-        path: '/post/mac-karabiner-elements-for-keyborad',
-        text: 'Mac外接键盘利器:',
-      },
-      nextTo: {
-        path: '/post/something-about-headless-chrome',
-        text: 'Headless Chrome目前的一些问题',
-      },
+      prevTo: null,
+      nextTo: null,
       formValidate: {},
       url: `${location.origin}${this.$route.path}`,
     }
   },
   created() {
-    const {articleId} = this.$route.params
-    if (articleId) {
-      this.blogDetail(articleId)
-    }
+    this.blogDetail(this.articleId)
+  },
+  watch: {
+    articleId(newArticleId) {
+      this.blogDetail(newArticleId)
+    },
   },
   methods: {
     /**
@@ -48,12 +50,20 @@ export default {
      * @param {String} articleId - 文章id
      */
     blogDetail(articleId) {
+      if (!articleId) return
       this.$ajax.blogDetail({articleId}).then((result) => {
-        console.log(result)
-        this.formValidate = result
+        this.formValidate = result.article
+        this.setPage(result.prevTo, result.nextTo)
       }).catch(() => {
         this.$Message.error('服务器错误了')
       })
+    },
+    /**
+     * 设置翻页
+     */
+    setPage(prevTo, nextTo) {
+      this.prevTo = prevTo ? { path: `/article/${prevTo.articleId}`, text: prevTo.title } : null
+      this.nextTo = nextTo ? { path: `/article/${nextTo.articleId}`, text: nextTo.title } : null
     },
   },
 }
