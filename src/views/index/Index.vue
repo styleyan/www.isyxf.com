@@ -4,9 +4,9 @@
       v-for="(item, key) in aritcleList"
       :key="key">
       <div class="meta">{{item.createTime}}</div>
-      <h1 class="title"><a :href="`/article/${item.articleId}`">{{item.title}}</a></h1>
+      <h1 class="title"><router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">{{item.title}}</router-link></h1>
       <div class="entry-content" v-html="item.preMore"></div>
-      <a :href="`/article/${item.articleId}`">阅读更多&raquo;</a>
+      <router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">阅读更多&raquo;</router-link>
     </article>
     <pagination :prevTo="prevTo" :nextTo="nextTo" :archive="true"></pagination>
   </section>

@@ -22,12 +22,6 @@
 <script>
 export default {
   name: 'article-detail',
-  props: {
-    articleId: {
-      type: String,
-      default: '',
-    },
-  },
   data() {
     return {
       prevTo: null,
@@ -37,21 +31,16 @@ export default {
     }
   },
   created() {
-    this.blogDetail(this.articleId)
-  },
-  watch: {
-    articleId(newArticleId) {
-      this.blogDetail(newArticleId)
-    },
+    this.blogDetail(this.$route.query.u)
   },
   methods: {
     /**
      * 编辑文章，初始化文章信息
-     * @param {String} articleId - 文章id
+     * @param {String} uuid - 文章id
      */
-    blogDetail(articleId) {
-      if (!articleId) return
-      this.$ajax.blogDetail({articleId}).then((result) => {
+    blogDetail(uuid) {
+      if (!uuid) return
+      this.$ajax.blogDetail({uuid}).then((result) => {
         this.formValidate = result.article
         this.setPage(result.prevTo, result.nextTo)
       }).catch(() => {

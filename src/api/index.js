@@ -31,7 +31,16 @@ class Apis extends Ajax {
    * @returns {Promise} 请求结果
    */
   blogDetail(params) {
-    return super.post(`/api/blog/detail/${params.articleId}`)
+    return super.post(`/api/blog/detail/${params.uuid}`)
+  }
+  /**
+   * 友情链接
+   * @url http://rapapi.org/workspace/myWorkspace.do?projectId=29324#294889
+   * @param {Object} params - 请求参数
+   * @returns {Promise} 请求结果
+   */
+  blogLinks(params) {
+    return super.post('/api/blog/get/link')
   }
 }
 
