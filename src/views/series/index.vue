@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="my-series">
     <template 
       v-for="item in list">
-      <h3>{{item.classifyName}}</h3>
-      <p>{{item.desc}}</p>
-      <ul>
+      <h3 class="my-series-h3">{{item.classifyName}}</h3>
+      <p class="my-series-p">{{item.desc}}</p>
+      <ul class="my-series-ul">
         <li v-for="(at, key) in item.list" :key="key">
           <router-link :to="{path:`/article/${at.articleId}`, query: { u: at.uuid }}">{{at.title}}</router-link>
         </li>
@@ -33,4 +33,16 @@ export default {
   },
 }
 </script>
-
+<style lang="stylus">
+.my-series {
+  &-h3, &-p, &-ul {
+    margin-top 15px
+  }
+  &-h3{
+    font-size 1.3em
+  }
+  &-ul{
+    margin-left 20px
+  }
+}
+</style>
