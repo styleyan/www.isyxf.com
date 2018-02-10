@@ -35,14 +35,15 @@ export default {
 </script>
 <style lang="stylus">
 .my-series {
-  &-h3, &-p, &-ul {
-    margin-top 15px
+  &-ul {
+    margin 6px 0 0 20px
+  }
+  &-p {
+    margin-top -2px
   }
   &-h3{
+    margin-top 30px
     font-size 1.3em
-  }
-  &-ul{
-    margin-left 20px
   }
 }
 </style>
