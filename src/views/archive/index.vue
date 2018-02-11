@@ -4,12 +4,12 @@
     <div class="entry-content" 
       v-for="(archive, key) in archiveList"
       :key="key">
-      <h3>{{archive.name}} ({{archive.list.length}})</h3>
+      <h3>{{archive.classify}} ({{archive.list.length}})</h3>
       <ul>
         <li 
           v-for="(item, key) in archive.list"
           :key="key">
-          <a :href="item.url">{{item.title}}</a>&nbsp;
+          <router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">{{item.title}}</router-link>&nbsp;
           <span class="date">{{item.createTime}}</span>
         </li>
       </ul>
@@ -22,44 +22,23 @@ export default {
   name: 'sssdf',
   data() {
     return {
-      archiveList: [
-        {
-          name: '2017年09月',
-          list: [
-            {
-              url: '/post/something-about-headless-chrome',
-              title: 'Headless Chrome目前的一些问题',
-              createTime: '2017-09-12 11:33:21',
-            },
-            {
-              url: '/post/something-about-headless-chrome',
-              title: 'Headless Chrome目前的一些问题',
-              createTime: '2017-09-12 11:33:21',
-            },
-          ],
-        },
-        {
-          name: '2017年09月',
-          list: [
-            {
-              url: '/post/something-about-headless-chrome',
-              title: 'Headless Chrome目前的一些问题',
-              createTime: '2017-09-12 11:33:21',
-            },
-            {
-              url: '/post/something-about-headless-chrome',
-              title: 'Headless Chrome目前的一些问题',
-              createTime: '2017-09-12 11:33:21',
-            },
-            {
-              url: '/post/something-about-headless-chrome',
-              title: 'Headless Chrome目前的一些问题',
-              createTime: '2017-09-12 11:33:21',
-            },
-          ],
-        },
-      ],
+      archiveList: [],
     }
+  },
+  created() {
+    this.getArchive()
+  },
+  methods: {
+    /**
+     * 获取文章归类数据
+     */
+    getArchive() {
+      this.$ajax.blogArchive().then((data) => {
+        this.archiveList = data
+      }).catch((msg) => {
+        global.console.log(msg)
+      })
+    },
   },
 }
 </script>
