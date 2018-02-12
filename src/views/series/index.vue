@@ -26,7 +26,6 @@ export default {
   methods: {
     getData() {
       this.$ajax.blogSeries({origin: 'www'}).then((result) => {
-        console.log(result)
         this.list = result.list
       })
     },
