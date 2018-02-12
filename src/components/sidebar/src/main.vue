@@ -7,28 +7,28 @@
       </div>
       <ul class="buttons">
         <li>
-          <a href="/" class="router-link-active" style="color:#fff !important;">
+          <router-link to="/">
             <i class="iconfont icon-home"></i>
             <span>首页</span>
-          </a>
+          </router-link>
         </li>
         <li>
-          <a href="/archive" class="router-link-active" style="color:#fff !important;">
+          <router-link to="/archive">
             <i class="iconfont icon-archive"></i>
             <span>归档</span>
-          </a>
+          </router-link>
         </li>
         <li>
-          <a href="/series" class="router-link-active" style="color:#fff !important;">
+          <router-link to="/series">
             <i class="iconfont icon-special"></i>
             <span>专题</span>
-          </a>
+          </router-link>
         </li>
         <li>
-          <a href="/link" style="color:#fff !important;" class="">
+          <router-link to="/link">
             <i class="iconfont icon-link"></i>
             <span>友链</span>
-          </a>
+          </router-link>
         </li>
       </ul>
     </div>

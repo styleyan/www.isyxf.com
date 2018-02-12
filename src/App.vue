@@ -1,6 +1,5 @@
 <template>
   <div id="app" class="container">
-    <loading-bar></loading-bar>
     <sidebar></sidebar>
     <mobile-header></mobile-header>
     <div id="main" class="wrap-main">

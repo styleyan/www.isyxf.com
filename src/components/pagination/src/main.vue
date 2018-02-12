@@ -29,3 +29,30 @@ export default {
   },
 }
 </script>
+<style lang="stylus">
+.pagination {
+  border-top: 1px solid #fff
+  border-bottom: 1px solid #ddd
+  line-height: 20px
+  overflow: hidden
+  padding: 20px 0
+  position: relative
+  width: 100%
+  font-size: 14px
+
+  .prev {
+    float: left
+  }
+  
+  .next {
+    float: right
+  }
+
+  .center {
+    margin: auto
+    text-align: center
+    width: 80px
+  }
+}
+
+</style>

@@ -12,7 +12,6 @@
         </ul> 
       </div>
     </article>
-    <div class="comments"><div id="disqus_thread"></div></div>
   </div>  
 </template>
 <script>
@@ -24,13 +23,13 @@ export default {
     }
   },
   created() {
-    this.getData()
+    this.getLinks()
   },
   methods: {
     /**
      * 获取友情链接数据
      */
-    getData() {
+    getLinks() {
       this.$ajax.blogLinks().then((data) => {
         this.linkList = data.list
       })

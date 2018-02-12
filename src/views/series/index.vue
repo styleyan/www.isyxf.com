@@ -39,7 +39,7 @@ export default {
     margin 6px 0 0 20px
   }
   &-p {
-    margin-top -2px
+    margin-top 2px
   }
   &-h3{
     margin-top 30px
