@@ -1,5 +1,5 @@
 <template>
-  <nav id="sidebar" class="behavior_1 sidebar-image" style="background-image:url(https://st.imququ.com/static/img/blog/left-bg2.jpg);transition:background 2s ease-in-out;background-size: cover;">
+  <nav id="sidebar" class="behavior_1 sidebar-image">
     <div class="wrap">
       <div class="profile">
         <a href="/"><img src="https://avatars3.githubusercontent.com/u/5258790?s=460&v=4"></a>
