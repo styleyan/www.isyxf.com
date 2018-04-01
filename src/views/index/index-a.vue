@@ -1,11 +1,14 @@
 <template>
   <section id="page-index">
-    <article class="post" 
+    <article
+      class="article"
       v-for="(item, key) in aritcleList"
       :key="key">
-      <div class="meta">{{item.createTime}}</div>
-      <h1 class="title"><router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">{{item.title}}</router-link></h1>
-      <div class="entry-content" v-html="item.preMore"></div>
+      <div class="article-meta">{{item.createTime}}</div>
+      <h1 class="article-title">
+        <router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">{{item.title}}</router-link>
+      </h1>
+      <div v-html="item.preMore"></div>
       <router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">阅读更多&raquo;</router-link>
     </article>
     <pagination :prevTo="prevTo" :nextTo="nextTo" :archive="true"></pagination>

@@ -1,66 +1,62 @@
 @media screen and (max-width:768px) {
-  a.anchor {
-    top: -50px;
-  }
-  
-  #toc {
-    margin: 0;
-    max-width: 100%;
-    float: none;
+  .toc {
+    margin: 0
+    max-width: 100%
+    float: none
   }
 
-  #header {
-    display: block;
-    -webkit-transform: translate3D(0, 0, 0);
-    -ms-transform: translate3D(0, 0, 0);
-    transform: translate3D(0, 0, 0);
-    -webkit-transition: all .2s cubic-bezier(.4, .01, .165, .99);
-    transition: all .2s cubic-bezier(.4, .01, .165, .99)
+  .header {
+    display block
+    -webkit-transform translate3D(0, 0, 0)
+    -ms-transform translate3D(0, 0, 0)
+    transform translate3D(0, 0, 0)
+    -webkit-transition all .2s cubic-bezier(.4, .01, .165, .99)
+    transition all .2s cubic-bezier(.4, .01, .165, .99)
   }
 
-  #sidebar {
-    -webkit-transition: -webkit-transform .2s cubic-bezier(.4, .01, .165, .99);
+  .sidebar {
+    -webkit-transition: -webkit-transform .2s cubic-bezier(.4, .01, .165, .99)
     transition: transform .2s cubic-bezier(.4, .01, .165, .99), -webkit-transform .2s cubic-bezier(.4, .01, .165, .99)
 
-    .profile {
-      padding-top: 20px;
+    &-behavior1{
+      -webkit-transform translate3D(-270px, 0, 0)
+      -ms-transform translate3D(-270px, 0, 0)
+      transform translate3D(-270px, 0, 0)
+    }
+
+    &-behavior2{
+      -webkit-transform translate3D(0, 0, 0)
+      -ms-transform translate3D(0, 0, 0)
+      transform translate3D(0, 0, 0)
+    }
+
+    &-profile{
+      padding-top: 20px
       padding-bottom: 20px
 
       a,img {
-        border-radius: 100px;
-        height: 100px;
-        width: 100px
+        border-radius 100px
+        height 100px
+        width 100px
       }
 
       span {
-        display: none
+        display none
       }
     }
-  }
-
-  #sidebar.behavior_1 {
-    -webkit-transform: translate3D(-270px, 0, 0);
-    -ms-transform: translate3D(-270px, 0, 0);
-    transform: translate3D(-270px, 0, 0)
-  }
-
-  #sidebar.behavior_2 {
-    -webkit-transform: translate3D(0, 0, 0);
-    -ms-transform: translate3D(0, 0, 0);
-    transform: translate3D(0, 0, 0)
   }
 }
 
 @media screen and (min-width:769px) and (max-width:1024px) {
-  #sidebar {
+  .sidebar {
     width: 75px
 
-    .profile {
+    &-profile {
       padding-top: 20px
 
       a, img {
-        border-radius: 40px;
-        height: 40px;
+        border-radius: 40px
+        height: 40px
         width: 40px
       }
       span {
@@ -68,23 +64,24 @@
       }
     }
     
-    .buttons {
+    &-buttons {
       li {
         a {
           padding: 0
-
-          i {
-            display: block;
-            font-size: 18px;
-            margin: 0 auto
-          }
-          span {
-            display: none
-          }
         }
         
         a.inline {
           width: 100%
+        }
+
+        i {
+          display: block
+          font-size: 18px
+          margin: 0 auto
+        }
+
+        span {
+          display: none
         }
       }
     }
@@ -99,37 +96,27 @@
 
 @media screen and (max-width:769px) {
   .wrap-main {
-    min-height: 100%;
-    padding-top: 50px;
-    padding-left: 10px;
-    padding-right: 10px;
+    min-height: 100%
+    padding-top: 50px
+    padding-left: 10px
+    padding-right: 10px
     width: 100%
   }
 }
 
 @media screen and (max-width:769px) {
-  article {
-    background-color: #fff;
+  .article {
+    background-color: #fff
     padding: 10px
 
-    h1 {
-      font-size: 22px;
-      margin: 0;
+    .article-title {
+      font-size: 22px
+      margin: 0
       padding: 5px 0 10px
     }
     
-    .meta {
+    .article-meta {
       display: none
-    }
-
-    .desc {
-      color: #999;
-      font-size: 14px
-    }
-
-    p.more {
-      font-size: 14px;
-      margin: 5px 0
     }
   }
 }

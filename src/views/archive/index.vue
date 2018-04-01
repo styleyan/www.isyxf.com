@@ -1,6 +1,6 @@
 <template>
-  <article class="post archive">
-    <h1 class="title">归档</h1>
+  <article class="article archive">
+    <h1 class="article-title">归档</h1>
     <div class="entry-content" 
       v-for="(archive, key) in archiveList"
       :key="key">
@@ -10,7 +10,7 @@
           v-for="(item, key) in archive.list"
           :key="key">
           <router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">{{item.title}}</router-link>&nbsp;
-          <span class="date">{{item.createTime}}</span>
+          <span class="date-font">{{item.createTime}}</span>
         </li>
       </ul>
     </div>

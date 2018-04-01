@@ -1,96 +1,89 @@
-#sidebar {
-  background-color: #202020
-  height: 100%
-  left: 0
-  overflow: auto
-  -webkit-overflow-scrolling: touch
-  position: fixed
-  top: 0
-  width: 270px
-  z-index: 1
+.sidebar {
+  background-color #202020
+  height 100%
+  left 0
+  overflow auto
+  -webkit-overflow-scrolling touch
+  position fixed
+  top 0
+  width 270px
+  z-index 1
 
-  li, ul {
-    list-style: none
-    margin: 0
-    padding: 0
-  }
-
-  .profile {
-    padding: 40px 0 10px 0
+  &-profile {
+    padding 40px 0 10px 0
 
     a, img {
-      border-radius: 76px
-      height: 152px
-      overflow: hidden
-      width: 152px
+      border-radius 76px
+      height 152px
+      overflow hidden
+      width 152px
     }
 
     a {
-      display: block
-      margin: 0 auto
+      display block
+      margin 0 auto
     }
 
     span {
-      color: #999
-      display: block
-      font-size: 18px
-      padding: 10px 0
-      text-align: center
+      color #999
+      display block
+      font-size 18px
+      padding 10px 0
+      text-align center
     }
   }
 
-  .buttons {
-    margin: 0 0 20px
+  &-buttons {
+    margin 0 0 20px
 
     li {
-      display: block
-      font-size: 14px
-      height: 45px
-      line-height: 45px
-      width: 100%
+      display block
+      font-size 14px
+      height 45px
+      line-height 45px
+      width 100%
+    }
 
-      a {
-        color: #dadada
-        display: block
-        padding-left: 60px
-        text-decoration: none
-        -webkit-transition: color .2s cubic-bezier(.4, .01, .165, .99)
-        transition: color .2s cubic-bezier(.4, .01, .165, .99)
+    a {
+      color #dadada
+      padding-left 60px
+      text-decoration none
+      -webkit-transition color .2s cubic-bezier(.4, .01, .165, .99)
+      transition color .2s cubic-bezier(.4, .01, .165, .99)
 
-        i, span {
-          display: inline-block
-          vertical-align: middle
-        }
-
-        i {
-          font-size: 16px
-          height: 46px
-          line-height: 46px
-          text-align: center
-          width: 25px
-        }
-
-        &:hover {
-          color: rgba(212, 212, 212, .7)
-        }
-      }
-
-      a.inline {
-        display: inline-block
-        width: 40px
+      &:hover {
+        color rgba(212, 212, 212, .7)
       }
     }
-  }
-}
 
-#sidebar-mask {
-  background-color: rgba(255, 255, 255, 0)
-  bottom: 0
-  display: none
-  left: 0
-  overflow: hidden
-  position: absolute
-  right: 0
-  top: 0
-  z-index: 999
+    a.inline {
+      display inline-block
+      width 40px
+    }
+
+    i, span {
+      display inline-block
+      vertical-align middle
+    }
+
+    i {
+      font-size 16px
+      height 46px
+      line-height 46px
+      text-align center
+      width 25px
+    }
+  }
+
+  &-mask {
+    display none
+    overflow hidden
+    position absolute
+    left 0
+    right 0
+    top 0
+    bottom 0
+    z-index 999
+    background-color rgba(255, 255, 255, 0)
+  }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div id="toc" class="toc">
+  <div class="toc">
     <p><strong>文章目录</strong></p> 
     <ul> 
       <li>
