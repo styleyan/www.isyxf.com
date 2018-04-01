@@ -8,7 +8,7 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: resolve => require(['../views/index/index.vue'], resolve),
+      component: resolve => require(['../views/index/index-a.vue'], resolve),
     },
     {
       path: '/archive',
