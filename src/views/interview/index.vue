@@ -53,7 +53,7 @@ export default {
 
 <style lang="stylus">
 button {
-  margin 0 10px
+  margin 0 16px 16px 0
   padding 8px
 }
 .tip {
@@ -63,6 +63,6 @@ button {
 }
 .btns {
   display flex
-  justify-content space-between
+  flex-wrap wrap
 }
 </style>
