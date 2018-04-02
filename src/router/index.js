@@ -42,6 +42,11 @@ export default new Router({
       name: 'test',
       component: resolve => require(['../views/test/index.vue'], resolve),
     },
+    {
+      path: '/interview',
+      name: 'interview',
+      component: resolve => require(['../views/interview/index.vue'], resolve),
+    },
   ],
   // 滚动到顶部
   scrollBehavior() {
