@@ -1,9 +1,7 @@
 <template>
-  <ul>
-    <li v-for="(item, key) in list" :key="key">
-      {{item.index}} : {{item.value}}
-    </li>
-  </ul>
+  <div>
+    我是test-ul
+  </div>
 </template>
 <script>
 export default {
@@ -14,15 +12,11 @@ export default {
       default: () => ([]),
     },
   },
-  data() {
-    return {
-      testList: this.list,
-    }
+  activated() {
+    console.log('激活组件')
   },
-  watch: {
-    list(newList) {
-      console.log('-----------newList-----------', newList)
-    },
+  deactivated() {
+    console.log('休眠组件')
   },
 }
 </script>

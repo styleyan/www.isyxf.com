@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from './api'
+import store from './store'
 import components from './components'
 import './assets/stylus/index.styl'
 
@@ -15,6 +16,10 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App },
+  mounted() {
+    console.log(this.$options)
+  },
 })
