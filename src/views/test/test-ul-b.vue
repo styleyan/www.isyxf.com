@@ -1,7 +1,7 @@
 <template>
   <div>
     我是test-ul-b <input v-model="aaa" />
-    {{ds}}
+    <button @click="cb('我是回调', 'eeeee')">测试回调</button>
   </div>
 </template>
 <script>
@@ -11,6 +11,10 @@ export default {
     value: {
       type: Boolean,
       default: false,
+    },
+    cb: {
+      type: Function,
+      default: () => {},
     },
   },
   data() {

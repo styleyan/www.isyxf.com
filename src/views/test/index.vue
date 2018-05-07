@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <test-ul></test-ul>
-    <test-ul-b v-model="testProps"></test-ul-b>
+    <test-ul-b :cb="cbHandler" v-model="testProps"></test-ul-b>
   </div>
 </template>
 <script>
@@ -23,6 +23,11 @@ export default {
   },
   mounted() {
     console.log(this.$options.state)
+  },
+  methods: {
+    cbHandler(msg, aa) {
+      console.log(msg)
+    },
   },
 }
 </script>

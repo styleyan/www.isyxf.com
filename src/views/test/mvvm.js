@@ -1,3 +1,4 @@
+/* eslint-disable */
 class Mvvm {
   constructor(options = {}) {
     this.$options = options
