@@ -6,14 +6,19 @@
         <a href="/">Y. Jer&nbsp;的虚拟笔记</a>
       </h1>
       <a href="/" class="header-cover">
-        <img class="header-img" src="https://avatars3.githubusercontent.com/u/5258790?s=460&v=4">
+        <img class="header-img" :src="avarImg">
       </a>
     </div>
     <div class="sidebar-mask"></div>
   </div>
 </template>
 <script>
+import avarImg from '@/assets/images/avar.jpg'
+
 export default {
   name: 'mobile-header',
+  data() {
+    return { avarImg }
+  },
 }
 </script>

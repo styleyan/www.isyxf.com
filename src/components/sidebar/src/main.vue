@@ -1,7 +1,7 @@
 <template>
   <nav class="sidebar sidebar-behavior1">
     <div class="sidebar-profile">
-      <a href="/"><img src="https://avatars3.githubusercontent.com/u/5258790?s=460&v=4"></a>
+      <a href="/"><img :src="avarImg"></a>
       <span>Y. Jer&nbsp;的虚拟笔记</span>
     </div>
     <ul class="sidebar-buttons">
@@ -33,7 +33,12 @@
   </nav>
 </template>
 <script>
+import avarImg from '@/assets/images/avar.jpg'
+
 export default {
   name: 'sidebar',
+  data() {
+    return { avarImg }
+  },
 }
 </script>
