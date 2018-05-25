@@ -8,6 +8,8 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+// 引入内联插件
+var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 
 var env = config.build.env
 
@@ -33,7 +35,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       compress: {
         warnings: false
       },
-      sourceMap: true
+      sourceMap: false
     }),
     // extract css into its own file
     new ExtractTextPlugin({
@@ -60,9 +62,11 @@ var webpackConfig = merge(baseWebpackConfig, {
         // more options:
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
+      inlineSource:/(app\.(.+)?\.css|manifest\.(.+)?\.js)$/,
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
     }),
+    new HtmlWebpackInlineSourcePlugin(),
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -83,14 +87,14 @@ var webpackConfig = merge(baseWebpackConfig, {
       name: 'manifest',
       chunks: ['vendor']
     }),
-    // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: config.build.assetsSubDirectory,
-        ignore: ['.*']
-      }
-    ])
+    // // copy custom static assets
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.resolve(__dirname, '../static'),
+    //     to: config.build.assetsSubDirectory,
+    //     ignore: ['.*']
+    //   }
+    // ])
   ]
 })
 
