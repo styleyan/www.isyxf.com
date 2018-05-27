@@ -10,10 +10,10 @@
       <p>本文链接：<a :href="url">{{url}}</a></p>
       <p>-- <acronym title="End of File">EOF</acronym> --</p>
       <p class="post-info">
-        发表于<i>{{formValidate.createTime}}</i>, 
+        <!-- 发表于<i>{{formValidate.createTime}}</i>, 
         添加在分类「 <a data-cate="前端"><code class="notebook">前端</code></a> 」下, 
         并被添加「 <a href="/tag/react%20native" class="" data-tag="react native"><code class="notebook">react native</code></a> 」标签 ，
-        最后修改于 <i>{{formValidate.updateTime}}</i>
+        最后修改于 <i>{{formValidate.updateTime}}</i> -->
       </p>
     </article>
     <pagination :prevTo="prevTo" :nextTo="nextTo"></pagination>
