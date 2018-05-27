@@ -10,6 +10,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 // 引入内联插件
 var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
+var dllConfig = require("../dll/config.json")
 
 var env = config.build.env
 
@@ -64,7 +65,8 @@ var webpackConfig = merge(baseWebpackConfig, {
       },
       inlineSource:/(app\.(.+)?\.css|manifest\.(.+)?\.js)$/,
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
+      chunksSortMode: 'dependency',
+      libJsName: dllConfig.libs.js,
     }),
     new HtmlWebpackInlineSourcePlugin(),
     // split vendor js into its own file

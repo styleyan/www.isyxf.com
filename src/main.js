@@ -19,7 +19,4 @@ new Vue({
   store,
   template: '<App/>',
   components: { App },
-  mounted() {
-    console.log(this.$options)
-  },
 })
