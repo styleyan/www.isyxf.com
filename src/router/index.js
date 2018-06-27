@@ -21,6 +21,11 @@ export default new Router({
       component: resolve => require(['../views/link/index.vue'], resolve),
     },
     {
+      path: '/articles',
+      name: 'articles',
+      component: resolve => require(['../views/articles/index.vue'], resolve),
+    },
+    {
       path: '/article',
       name: 'article',
       component: resolve => require(['../views/article/router-view.vue'], resolve),
