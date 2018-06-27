@@ -33,6 +33,11 @@ export default new Router({
       ],
     },
     {
+      path: '/articles',
+      name: 'articles',
+      component: resolve => require(['../views/articles/index.vue'], resolve),
+    },
+    {
       path: '/series',
       name: 'series',
       component: resolve => require(['../views/series/index.vue'], resolve),
