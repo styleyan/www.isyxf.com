@@ -30,6 +30,18 @@
         </router-link>
       </li>
       <li>
+        <router-link to="/books">
+          <i class="iconfont icon-special"></i>
+          <span>书单</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/maxim">
+          <i class="iconfont icon-special"></i>
+          <span>箴言</span>
+        </router-link>
+      </li>
+      <li>
         <router-link to="/link">
           <i class="iconfont icon-link"></i>
           <span>友链</span>

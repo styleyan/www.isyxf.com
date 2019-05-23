@@ -43,6 +43,16 @@ export default new Router({
       component: resolve => require(['../views/series/index.vue'], resolve),
     },
     {
+      path: '/books',
+      name: 'books',
+      component: resolve => require(['../views/books/index.vue'], resolve),
+    },
+    {
+      path: '/maxim',
+      name: 'maxim',
+      component: resolve => require(['../views/maxim/index.vue'], resolve),
+    },
+    {
       path: '/test',
       name: 'test',
       component: resolve => require(['../views/test/index.vue'], resolve),
