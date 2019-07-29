@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <div class="yxf">我是测试 stylus</div>
     <div>
       <logo />
       <h1 class="title">
@@ -24,11 +25,6 @@
           GitHub
         </a>
       </div>
-      <ul>
-        <li v-for="aaa in list" :key="aaa.id">
-          {{aaa.title}}
-        </li>
-      </ul>
     </div>
   </div>
 </template>
@@ -43,28 +39,20 @@ export default {
   data() {
     return {}
   },
+  /**
+   * 服务端渲染
+   */
   async asyncData({ $axios }) {
-    let result = await $axios({
-      url: "/api/remarkableWriting/list"
-    });
+    // let result = await $axios({
+    //   url: "/api/remarkableWriting/list"
+    // });
 
-    return {list: result.data.result}
-  },
-  mounted() {
-    this.$axios({
-      url: "/api/remarkableWriting/list"
-    }).then(res => {
-      res.data.result.forEach((item, key) => {
-        item.id = item.id + '' + key;
-        console.log(item)
-        this.list.push(item)
-      })
-    })
+    return {list: []}
   }
 }
 </script>
 
-<style>
+<style lang="stylus">
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -72,6 +60,10 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  .yxf {
+    color blue
+  }
 }
 
 .title {
