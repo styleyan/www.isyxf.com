@@ -24,6 +24,11 @@
           GitHub
         </a>
       </div>
+      <ul>
+        <li v-for="aaa in list" :key="aaa.id">
+          {{aaa.title}}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -34,6 +39,27 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+  data() {
+    return {}
+  },
+  async asyncData({ $axios }) {
+    let result = await $axios({
+      url: "/api/remarkableWriting/list"
+    });
+
+    return {list: result.data.result}
+  },
+  mounted() {
+    this.$axios({
+      url: "/api/remarkableWriting/list"
+    }).then(res => {
+      res.data.result.forEach((item, key) => {
+        item.id = item.id + '' + key;
+        console.log(item)
+        this.list.push(item)
+      })
+    })
   }
 }
 </script>
@@ -70,3 +96,4 @@ export default {
   padding-top: 15px;
 }
 </style>
+
