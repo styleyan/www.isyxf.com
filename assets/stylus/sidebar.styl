@@ -1,0 +1,89 @@
+.sidebar {
+  background-color #2a2935
+  height 100%
+  left 0
+  overflow auto
+  -webkit-overflow-scrolling touch
+  position fixed
+  top 0
+  width 220px
+  z-index 1
+
+  &-profile {
+    padding 40px 0 10px 0
+
+    a, img {
+      border-radius 76px
+      height 100px
+      overflow hidden
+      width 100px
+    }
+
+    a {
+      display block
+      margin 0 auto
+    }
+
+    span {
+      color #999
+      display block
+      font-size 12px
+      padding 10px 0
+      text-align center
+    }
+  }
+
+  &-buttons {
+    margin 0 0 20px
+
+    li {
+      display block
+      font-size 14px
+      height 45px
+      line-height 45px
+      width 100%
+    }
+
+    a {
+      color #dadada
+      padding-left 60px
+      text-decoration none
+      -webkit-transition color .2s cubic-bezier(.4, .01, .165, .99)
+      transition color .2s cubic-bezier(.4, .01, .165, .99)
+
+      &:hover {
+        color rgba(212, 212, 212, .7)
+      }
+    }
+
+    a.inline {
+      display inline-block
+      width 40px
+    }
+
+    i, span {
+      display inline-block
+      vertical-align middle
+    }
+
+    i {
+      font-size 16px
+      height 46px
+      line-height 46px
+      text-align center
+      width 25px
+    }
+  }
+
+  &-mask {
+    display none
+    overflow hidden
+    position absolute
+    left 0
+    right 0
+    top 0
+    bottom 0
+    z-index 999
+    background-color rgba(255, 255, 255, 0)
+  }
+}

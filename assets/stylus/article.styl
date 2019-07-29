@@ -1,0 +1,196 @@
+.article {
+  border-bottom 1px solid #ddd
+  border-top 1px solid #fff
+  padding 30px 0
+  position relative
+  word-wrap break-word
+
+  img {
+    height auto
+    max-width 910px
+  }
+
+  strong {
+    font-weight 700
+  }
+
+  em {
+    font-style italic
+  }
+
+  blockquote {
+    margin 0
+    padding: 15px 20px
+    background-color #f8f8f8
+    border-left 5px solid #2479CC
+
+    p {
+      margin-bottom 0
+    }
+  }
+
+  > .entry-content p code, > .entry-content li code {
+    background-color #f2f2f2
+    border-radius 5px
+    font-family "Consolas", "Courier New", Courier, mono, serif
+    font-size 80%
+    margin 0 2px
+    padding 4px 5px
+    vertical-align middle
+    border 1px solid #d8e0e4
+    color #c25
+  }
+
+  pre {
+    overflow hidden
+    position relative
+    padding 0.6em
+    color #5d6a6a
+    font-family "Consolas", "Liberation Mono", Courier, monospace
+    font-size 14px
+    line-height 1.6
+    white-space pre-wrap
+    word-break break-all
+    word-wrap break-word
+
+    code {
+      display block
+      margin 0
+      padding 0
+      position relative
+      background-color transparent
+      border-radius 0 0 0 0
+      border 0
+      font-size 100%
+      font-family inherit
+    }
+  }
+
+  img {
+    display block
+    margin 10px 0 5px
+    max-width 100%
+    padding 0
+    border 1px solid #ccc
+  }
+
+  table {
+    border 0
+    border-collapse collapse
+    border-spacing 0
+
+    th, td {
+      border 0
+    }
+
+    th {
+      border-bottom 2px solid #848484
+      padding 6px 20px
+      text-align left
+    }
+
+    td {
+      border-bottom 1px solid #d0d0d0
+      padding 6px 20px
+    }
+  }
+
+  &-meta{
+    color #555
+    float right
+    font-size .9em
+    line-height 2
+    position relative
+    text-align right
+    width auto
+
+    .date {
+      position relative
+    }
+  }
+
+  &-title {
+    font-size 1.8em
+    font-weight 300
+    line-height 35px
+    margin-bottom 20px
+    color #333
+
+    a {
+      color #333
+      &:hover {
+        color #2479CC
+        transition color .3s
+      }
+    }
+  }
+}
+
+.entry-content {
+  padding-bottom 36px
+  line-height 1.6
+  word-wrap break-word
+
+  h4 {
+    font-size 1.2em
+    font-weight 700
+  }
+
+h1, h2, h3, h4, h5, h6{
+    margin-top 16px
+  }
+
+  blockquote, ul, ol, dl, table, iframe, pre, p {
+    margin-top 5px
+  }
+
+  pre {
+    b.name {
+      position absolute
+      right 10px
+      top 10px
+      color #eee
+      font-size 60px
+      line-height 1
+      pointer-events none
+    }
+  }
+
+  ul ul,
+  ul ol,
+  ul dl,
+  ol ul,
+  ol ol,
+  ol dl,
+  dl ul,
+  dl ol,
+  dl dl,
+  blockquote > p:first-of-type {
+    margin-top: 0
+  }
+
+  ul,
+  ol,
+  dl {
+    margin-left: 20px
+  }
+  ul {
+    li {
+      font-size: 14px
+      color: #8e8e8e
+    }
+  }
+  p {
+    margin-bottom: 10px; 
+  }
+}
+
+.post-info {
+  font-size 14px
+}
+
+.date-font {
+  color #999
+  font-size 14px
+  font-style italic
+}

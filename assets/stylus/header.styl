@@ -1,0 +1,69 @@
+.header {
+  display none
+  background-color #323436
+  height 50px
+  left 0
+  line-height 50px
+  overflow hidden
+  position fixed
+  top 0
+  width 100%
+  z-index 9
+
+  &-h1 {
+    font-size 16px
+    text-align center
+    
+    a {
+      color #fff !important
+    }
+  }
+
+  &-cover {
+    position absolute
+    right 10px
+    top 10px
+  }
+
+  &-cover, &-img {
+    border-radius 30px
+    height 30px
+    overflow hidden
+    width 30px
+  }
+
+  &-bar {
+    height 50px
+    left 0
+    position absolute
+    top 0
+    width 50px
+
+    i {
+      opacity 1
+      top 25px
+    }
+
+    &:before {
+      content ''
+      top 17px
+    }
+
+    &:after {
+      bottom 16px
+      content ''
+    }
+
+    &:before, &:after, i {
+      background-color #fff
+      height 1px
+      left 14px
+      position absolute
+      -webkit-transition all .2s cubic-bezier(.4, .01, .165, .99) .3s
+      transition all .2s cubic-bezier(.4, .01, .165, .99) .3s
+      width 22px
+    }
+  }
+}
+
+
