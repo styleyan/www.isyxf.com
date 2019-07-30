@@ -1,17 +1,30 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        www.isyxf.com
+  <section id="page-index">
+    <article
+      class="article"
+      v-for="(item, key) in aritcleList"
+      :key="key">
+      <div class="article-meta">{{item.createTime}}</div>
+      <h1 class="article-title">
+        <router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">{{item.title}}</router-link>
       </h1>
-    </div>
-  </div>
+      <div v-html="item.preMore"></div>
+      <router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">阅读更多&raquo;</router-link>
+    </article>
+    <pagination :prevTo="prevTo" :nextTo="nextTo" :archive="true"></pagination>
+  </section>
 </template>
 
 <script>
+import Pagination from '~/components/pagination'
+
 export default {
+  components: { Pagination },
   data() {
-    return {}
+    return {
+      prevTo: null,
+      nextTo: null,
+    }
   },
   /**
    * 服务端渲染
@@ -21,45 +34,35 @@ export default {
     //   url: "/api/remarkableWriting/list"
     // });
 
-    return {list: []}
+    return {
+      aritcleList: [{
+        "title": "linux 常用命令",
+        "createTime": "2019-07-23 11:20:57",
+        "isShow": true,
+        "classify": "9kdc0bs9hbw",
+        "articleId": "linux-cmd",
+        "preMore": "<p>~ [...]",
+        "uuid": "i1dpc5ru7zj",
+        "updateTime": "2019-07-23 12:06:49",
+        "classifyName": "服务器维护"
+      },
+      {
+        "title": "hashMap 加载因子",
+        "createTime": "2019-07-15 04:20:06",
+        "isShow": true,
+        "classify": "igkdzapa4kn",
+        "articleId": "java-hanMap",
+        "preMore": "<p>加载因子是标识Hash表中元素的填满程度，若加载因子越大，填满的元素越多，好处是空间利用率提升了，但冲突的机会加大了。[...]",
+        "uuid": "gfwalg2t0hg",
+        "updateTime": "2019-07-15 12:37:09",
+        "classifyName": "java"
+      }]
+    }
   }
 }
 </script>
 
 <style lang="stylus">
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 
-  .yxf {
-    color blue
-  }
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
 
