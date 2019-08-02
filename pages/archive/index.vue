@@ -20,31 +20,35 @@
 <script>
 export default {
     async asyncData({ $axios }) {
+        let data = await $axios.get("/api/client/archive")
+        const archiveList = []
+        let item = {}
+
+        data.result.forEach((curr, i, arrays) => {
+          let timer = curr.gmtCreate.substring(0, 7);
+
+          // 初始化
+          if (!i){
+            item.classify = timer
+            item.list = []
+          }
+
+          if (item.classify !== timer) {
+            archiveList.push(item)
+            item = {}
+            item.list = []
+            item.classify = timer
+          }
+          item.list.push(curr)
+
+          // 如果是最后一个
+          if (i === arrays.length - 1) {
+            archiveList.push(item)
+          }
+        })
+
         return {
-            archiveList: [{
-            "classify": "2019-07",
-            "list": [{
-                "title": "linux 常用命令",
-                "createTime": "2019-07-23 11:20:57",
-                "isShow": true,
-                "articleId": "linux-cmd",
-                "uuid": "i1dpc5ru7zj"
-                },
-                {
-                "title": "hashMap 加载因子",
-                "createTime": "2019-07-15 04:20:06",
-                "isShow": true,
-                "articleId": "java-hanMap",
-                "uuid": "gfwalg2t0hg"
-                },
-                {
-                "title": "后端技术栈架构",
-                "createTime": "2019-07-09 11:24:49",
-                "isShow": true,
-                "articleId": "java-framework",
-                "uuid": "v7itjko4op"
-            }]
-            }]
+          archiveList
         }
     }
 }

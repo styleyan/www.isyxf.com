@@ -1,9 +1,9 @@
 <template>
   <nav class="pagination">
-    <router-link v-if="prevTo" :to="prevTo" class="prev">&laquo; {{prevTo.text}}</router-link>
-    <router-link v-if="nextTo" :to="nextTo" class="next">{{nextTo.text}} &raquo;</router-link>
-    <div v-if="archive" class=center>
-      <router-link :to="{name:'archive'}">博客归档</router-link>
+    <nuxt-link v-if="hasPreviousPage" to="/" class="prev">&laquo; 上一页</nuxt-link>
+    <nuxt-link v-if="hasNextPage" to="/" class="next">下一页 &raquo;</nuxt-link>
+    <div v-if="isShow" class=center>
+      <nuxt-link to="/archive">博客归档</nuxt-link>
     </div>
   </nav>
 </template>
@@ -11,21 +11,18 @@
 export default {
   name: 'pagination',
   props: {
-    // 是否显示博客归档
-    archive: {
+    isShow: {
       type: Boolean,
       default: false,
     },
-    // 向前配置
-    prevTo: {
-      type: Object,
-      default: null,
+    hasPreviousPage: {
+      type: Boolean,
+      default: false
     },
-    // 向后配置
-    nextTo: {
-      type: Object,
-      default: null,
-    },
+    hasNextPage: {
+      type: Boolean,
+      default: false
+    }
   },
 }
 </script>

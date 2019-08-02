@@ -19,10 +19,11 @@ $ npm run start
 $ npm run generate
 ```
 
-##### 参考文章
-- [Nuxt.js使用笔记](https://iiong.com/nuxtjs-use-note/)
-
 ##### 问题
 - 支持stylus编译器
 - 代理转发
 - [axios的配置](https://iiong.com/nuxtjs-use-note/)
+
+
+##### 参考文章
+- [Nuxt.js使用笔记](https://iiong.com/nuxtjs-use-note/)

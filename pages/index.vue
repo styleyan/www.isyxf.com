@@ -4,14 +4,14 @@
       class="article"
       v-for="(item, key) in aritcleList"
       :key="key">
-      <div class="article-meta">{{item.createTime}}</div>
+      <div class="article-meta">{{item.gmtCreate}}</div>
       <h1 class="article-title">
-        <router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">{{item.title}}</router-link>
+        <router-link :to="{path:`/article/${item.url}`}">{{item.title}}</router-link>
       </h1>
-      <div v-html="item.preMore"></div>
-      <router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">阅读更多&raquo;</router-link>
+      <div v-html="item.brief"></div>
+      <router-link :to="{path:`/article/${item.articleId}`}">阅读更多&raquo;</router-link>
     </article>
-    <pagination :prevTo="prevTo" :nextTo="nextTo" :archive="true"></pagination>
+    <pagination :hasPreviousPage="hasPreviousPage" :hasNextPage="hasNextPage" :isShow="true"></pagination>
   </section>
 </template>
 
@@ -21,42 +21,18 @@ import Pagination from '~/components/pagination'
 export default {
   components: { Pagination },
   data() {
-    return {
-      prevTo: null,
-      nextTo: null,
-    }
+    return {}
   },
   /**
    * 服务端渲染
    */
   async asyncData({ $axios }) {
-    // let result = await $axios({
-    //   url: "/api/remarkableWriting/list"
-    // });
+    let data = await $axios.get("/api/article/list", {params: {pageNum: 2, pageSize: 2}});
 
     return {
-      aritcleList: [{
-        "title": "linux 常用命令",
-        "createTime": "2019-07-23 11:20:57",
-        "isShow": true,
-        "classify": "9kdc0bs9hbw",
-        "articleId": "linux-cmd",
-        "preMore": "<p>~ [...]",
-        "uuid": "i1dpc5ru7zj",
-        "updateTime": "2019-07-23 12:06:49",
-        "classifyName": "服务器维护"
-      },
-      {
-        "title": "hashMap 加载因子",
-        "createTime": "2019-07-15 04:20:06",
-        "isShow": true,
-        "classify": "igkdzapa4kn",
-        "articleId": "java-hanMap",
-        "preMore": "<p>加载因子是标识Hash表中元素的填满程度，若加载因子越大，填满的元素越多，好处是空间利用率提升了，但冲突的机会加大了。[...]",
-        "uuid": "gfwalg2t0hg",
-        "updateTime": "2019-07-15 12:37:09",
-        "classifyName": "java"
-      }]
+      aritcleList: data.result.list,
+      hasNextPage: data.result.hasNextPage,
+      hasPreviousPage: data.result.hasPreviousPage
     }
   }
 }

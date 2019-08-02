@@ -16,12 +16,12 @@
 <script>
 export default {
   async asyncData({ $axios }) {
-    let result = await $axios({
+    let data = await $axios({
       url: "/api/link/list"
     });
 
     return {
-      linkList: result.result
+      linkList: data.result
     }
   }
 }
