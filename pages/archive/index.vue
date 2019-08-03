@@ -1,20 +1,20 @@
 <template>
-    <article class="article archive">
-    <h1 class="article-title">归档</h1>
+<article class="article archive">
+    <h1 class="article-title">按月存档</h1>
     <div class="entry-content" 
       v-for="(archive, key) in archiveList"
-      :key="key">
-      <h3>{{archive.classify}} ({{archive.list.length}})</h3>
-      <ul>
+    :key="key">
+    <h3>{{archive.classify}}&nbsp;({{archive.list.length}})</h3>
+    <ul>
         <li 
-          v-for="(item, key) in archive.list"
-          :key="key">
-          <router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">{{item.title}}</router-link>&nbsp;
-          <span class="date-font">{{item.createTime}}</span>
+        v-for="(item, key) in archive.list"
+        :key="key">
+        <router-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">{{item.title}}</router-link>&nbsp;
+        <span class="date-font">{{item.createTime}}</span>
         </li>
-      </ul>
+    </ul>
     </div>
-  </article>
+</article>
 </template>
 
 <script>
@@ -53,4 +53,3 @@ export default {
     }
 }
 </script>
-
