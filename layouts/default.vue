@@ -5,7 +5,7 @@
     <div id="main" class="wrap-main">
       <nuxt />
     </div>
-    <my-footer></my-footer>
+    <!-- <my-footer></my-footer> -->
   </div>
 </template>
 

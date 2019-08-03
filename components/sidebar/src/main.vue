@@ -1,34 +1,34 @@
 <template>
   <nav class="sidebar sidebar-behavior1">
     <div class="sidebar-profile">
-      <a href="/"><img :src="avarImg"></a>
+      <nuxt-link to="/"><img :src="avarImg"></nuxt-link> 
       <span>Y. Jer&nbsp;的虚拟笔记</span>
     </div>
     <ul class="sidebar-buttons">
       <li>
-        <router-link to="/">
+        <nuxt-link to="/">
           <i class="iconfont icon-home"></i>
           <span>首页</span>
-        </router-link>
+        </nuxt-link>
       </li>
       <li>
-        <router-link to="/archive">
+        <nuxt-link to="/archive">
           <i class="iconfont icon-archive"></i>
           <span>归档</span>
-        </router-link>
+        </nuxt-link>
       </li>
       <li>
-        <router-link to="/series">
+        <nuxt-link to="/series">
           <i class="iconfont icon-special"></i>
           <span>专题</span>
-        </router-link>
+        </nuxt-link>
       </li>
-      <li>
+      <!-- <li>
         <router-link to="/articles">
           <i class="iconfont icon-qiwen"></i>
           <span>奇文</span>
         </router-link>
-      </li>
+      </li> -->
       <li>
         <router-link to="/books">
           <i class="iconfont icon-shudan" style="font-size:14px"></i>

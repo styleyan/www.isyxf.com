@@ -6,17 +6,17 @@
   -webkit-overflow-scrolling touch
   position fixed
   top 0
-  width 220px
+  width 120px
   z-index 1
 
   &-profile {
-    padding 40px 0 10px 0
+    padding 20px 0 10px 0
 
     a, img {
       border-radius 76px
-      height 101px
+      height 76px
       overflow hidden
-      width 101px
+      width 76px
     }
 
     a {
@@ -45,15 +45,23 @@
     }
 
     a {
+      display block
       color #dadada
-      padding-left 60px
+      padding-left 26px
       text-decoration none
       -webkit-transition color .2s cubic-bezier(.4, .01, .165, .99)
       transition color .2s cubic-bezier(.4, .01, .165, .99)
 
       &:hover {
-        color rgba(212, 212, 212, .7)
+        color rgba(255, 196, 2, .8)
       }
+    }
+
+    // nuxt 菜单栏选择颜色
+    .nuxt-link-exact-active{
+        color: #ffc402;
+        // background: #26252f;
+        // border-right: 3px solid;
     }
 
     a.inline {

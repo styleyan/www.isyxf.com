@@ -5,9 +5,10 @@
   box-sizing border-box
 }
 body {
-  line-height 1.8
+  font-family: PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+  line-height: 1.8;
+  font-weight: 400;
   color #333
-  font-family "-apple-system","Open Sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif
   -webkit-font-smoothing antialiased
   padding 0
   margin 0
@@ -23,9 +24,14 @@ body, html {
   width 100%
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: PingFang SC,Verdana,Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
 a, a:hover {
   text-decoration none
-  color #0c82f5
 }
 
 .intro {
@@ -36,10 +42,15 @@ a, a:hover {
 }
 
 .wrap-main {
-  max-width 1688px
-  padding-left 260px
-  padding-right 40px
+  padding-left 160px
   -webkit-overflow-scrolling touch
   color #444
   background-color #fff
+}
+
+.clearfix{
+  &:after,&:before{
+    content: "";
+    display: table;
+  }
 }
