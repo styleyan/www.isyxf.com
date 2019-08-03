@@ -23,6 +23,7 @@ $ npm run generate
 - 支持stylus编译器
 - 代理转发
 - [axios的配置](https://iiong.com/nuxtjs-use-note/)
+- [自定义进度条颜色](https://www.jianshu.com/p/fb17a9a71e56)
 
 
 ##### 参考文章

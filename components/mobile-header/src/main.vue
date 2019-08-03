@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import avarImg from '~/assets/images/avar.jpg'
+import avarImg from '~/assets/images/logo-120.png'
 
 export default {
   name: 'mobile-header',

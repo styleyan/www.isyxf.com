@@ -29,6 +29,7 @@ module.exports = {
   */
   plugins: [
     '~/plugins/axios',
+    {src:'~/plugins/loading', ssr:false }
   ],
   /*
   ** Nuxt.js dev-modules
