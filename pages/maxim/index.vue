@@ -1,6 +1,6 @@
 <template>
     <div class="maxim">
-        <h2>个人箴言</h2>
+        <page-title title="个人箴言"></page-title>
         <dl v-for="item in list" :key="item.id">
             <dt>{{item.gmtCreate}}</dt>
             <dd v-html="item.context"></dd>
@@ -9,7 +9,10 @@
 </template>
 
 <script>
+import PageTitle from '~/components/PageTitle'
+
 export default {
+    components: { PageTitle },
     /**
      * 服务端渲染
      */
@@ -24,11 +27,8 @@ export default {
 </script>
 <style lang="stylus">
 .maxim{
-    h2{
-        margin-bottom 40px
-    }
     dl{
-        margin-bottom 30px
+        margin 0 66px 30px 0
     }
     dt {
         font-size 22px

@@ -1,20 +1,21 @@
 <template>
-    <article>
-    <h1 class="article-title">友情链接</h1>
-    <div class="links-content">
-      <p class="links-p">欢迎交换友链，特别是https站点会加上<i class="iconfont icon-https"></i>小绿锁</p> 
-      <ul> 
-        <li v-for="(item, key) in linkList" :key="key">
-          <template v-if="item.https"><i class="iconfont icon-https"></i></template>
-          <a target="_blank" :href="item.websiteUrl">{{item.websiteName}}</a>
-        </li> 
-      </ul> 
-    </div>
+  <article class="links-pages">
+    <page-title title="友情链接"></page-title>
+    <p class="desc">欢迎交换友链，特别是https站点会加上<i class="iconfont icon-https"></i>小绿锁</p> 
+    <ul class="list"> 
+      <li v-for="(item, key) in linkList" :key="key">
+        <i v-if="item.https" class="iconfont icon-https"></i>
+        <a target="_blank" :href="item.websiteUrl">{{item.websiteName}}</a>
+      </li> 
+    </ul> 
   </article>
 </template>
 
 <script>
+import PageTitle from '~/components/PageTitle'
+
 export default {
+  components: { PageTitle },
   async asyncData({ $axios }) {
     let data = await $axios({
       url: "/api/link/list"
@@ -27,19 +28,28 @@ export default {
 }
 </script>
 <style lang="stylus">
-.links {
-  &-content{
-    .icon-https {
-      color #00bb00
-    }
-    
-    li, ul {
-      list-style none
+.links-pages {
+  .icon-https {
+    color #00bb00
+  }
+
+  .list{
+    a{
+      color #333
+
+      &:hover{
+        text-decoration underline
+      }
     }
   }
 
-  &-p{
+  .desc{
     padding-bottom 16px
+    font-size 15px
+
+    .icon-https{
+      margin 0 3px  
+    }
   }
 }
 </style>

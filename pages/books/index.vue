@@ -1,30 +1,11 @@
 <template>
     <div class="books-page">
-        <h2>个人书单</h2>
-        <p class="books-page-desc">本页面的内容，由两个步骤生成：</p>
-        <dl>
-            <dt>正在读</dt>
+        <page-title title="个人书单"></page-title>
+        <dl v-for="item in list" :key="item.type">
+            <dt>{{item.type}}</dt>
             <dd>
                 <ul>
-                    <li v-for="item in onreadList" :key="item.id">{{item.bookName}}</li>
-                </ul>
-            </dd>
-        </dl>
-
-        <dl>
-            <dt>已读</dt>
-            <dd>
-                <ul>
-                    <li v-for="item in alreadyReadList" :key="item.id">{{item.bookName}}</li>
-                </ul>
-            </dd>
-        </dl>
-
-        <dl>
-            <dt>未读</dt>
-            <dd>
-                <ul>
-                    <li v-for="item in unreadList" :key="item.id">{{item.bookName}}</li>
+                    <li v-for="item in item.list" :key="item.id"><i class="iconfont icon-spot"></i>{{item.bookName}}</li>
                 </ul>
             </dd>
         </dl>
@@ -32,17 +13,17 @@
 </template>
 
 <script>
+import PageTitle from '~/components/PageTitle'
+
 export default {
+   components: { PageTitle },
    /**
    * 服务端渲染
    */
   async asyncData({ $axios }) {
     const data = await $axios.get("/api/books/list");
-    // 未读
     const unreadList = []
-    // 在读
     const onreadList = []
-    // 已读
     const alreadyReadList = []
 
     data.result.forEach((item) => {
@@ -63,24 +44,32 @@ export default {
     })
 
     return {
-        alreadyReadList,
-        unreadList,
-        onreadList,
+        list: [
+            {
+                type: "正在读",
+                list: onreadList
+            },
+            {
+                type: "已读",
+                list: alreadyReadList
+            },
+            {
+                type: "未读",
+                list: unreadList
+            }
+        ]
     }
   }
 }
 </script>
 <style lang="stylus">
 .books-page{
-    &-desc{
-        margin-bottom 40px
-    }
     dl{
-        margin-bottom 30px
+        margin-bottom 22px
     }
     dt{
-        font-size 18px
-        font-weight bold
+        font-size 22px
+        font-weight 500
     }
     dd{
         font-size 14px

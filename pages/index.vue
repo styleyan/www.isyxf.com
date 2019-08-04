@@ -1,6 +1,6 @@
 <template>
   <section id="page-index">
-    <h2 class="page-title">最近更新</h2>
+    <page-title title="最近更新"></page-title>
     <div class="row-container-wrapper">
         <article
           class="article-index"
@@ -57,9 +57,10 @@
 
 <script>
 import Pagination from '~/components/pagination'
+import PageTitle from '~/components/PageTitle'
 
 export default {
-  components: { Pagination },
+  components: { Pagination, PageTitle },
   data() {
     return {}
   },
@@ -133,14 +134,6 @@ export default {
     background-color: #ce9e00;
     border-color: #c49600;  
   }
-}
-
-.page-title{
-    margin: 20px 66px 10px 0;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    font-size: 20px;
-    color: #999;
 }
 </style>
 
