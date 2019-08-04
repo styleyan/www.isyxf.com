@@ -5,11 +5,18 @@
             <dt>{{item.gmtCreate}}</dt>
             <dd v-html="item.context"></dd>
         </dl>
+        <!-- <timeline>
+            <timeline-title>2019</timeline-title>
+            <timeline-item v-for="item in list" :key="item.id">
+                {{item.gmtCreate}}：{{item.context}}
+            </timeline-item>
+        </timeline> -->
     </div>
 </template>
 
 <script>
 import PageTitle from '~/components/PageTitle'
+// import { Timeline, TimelineItem, TimelineTitle } from 'vue-cute-timeline'
 
 export default {
     components: { PageTitle },
