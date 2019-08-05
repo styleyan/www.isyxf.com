@@ -14,7 +14,7 @@
 import MyFooter from '~/components/footer'
 import MobileHeader from '~/components/mobile-header'
 import Sidebar from '~/components/sidebar'
-import { changeBg } from './changeBg'
+import changeBg from './changeBg'
 
 export default {
   components: {
@@ -39,6 +39,7 @@ export default {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -10;
+  z-index: 1;
+  pointer-events: none
 }
 </style>

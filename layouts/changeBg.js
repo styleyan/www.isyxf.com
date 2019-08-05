@@ -1,4 +1,4 @@
-export function changeBg(i) {
+export default function changeBg(i) {
     var c = document.getElementsByTagName('canvas')[0];
     var x = c.getContext('2d'),
       pr = window.devicePixelRatio || 1,
@@ -15,7 +15,7 @@ export function changeBg(i) {
     c.height = h*pr
     x.scale(pr, pr)
     x.globalAlpha = 0.6
-  
+
     function d(i,j){
       x.beginPath()
       x.moveTo(i.x, i.y)
@@ -30,12 +30,12 @@ export function changeBg(i) {
       q[0] = q[1]
       q[1] = {x:k,y:n}
     }
-    
+
     function y(p){
       var t = p + (z()*2-1.1)*f
       return (t>h||t<0) ? y(p) : t
     }
-  
+
     x.clearRect(0,0,w,h)
     q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
     while(q[1].x<w+f) d(q[0], q[1])
