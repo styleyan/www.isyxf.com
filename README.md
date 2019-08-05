@@ -28,3 +28,4 @@ $ npm run generate
 
 ##### 参考文章
 - [Nuxt.js使用笔记](https://iiong.com/nuxtjs-use-note/)
+- [使用Nuxt+Vue+Node构建的SSR博客项目](http://justyeh.top/post/29/)

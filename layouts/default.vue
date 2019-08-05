@@ -1,5 +1,5 @@
 <template>
-  <div class="ddddd">
+  <div>
     <sidebar></sidebar>
     <canvas id="evanyou"></canvas>
     <mobile-header></mobile-header>
@@ -24,7 +24,7 @@ export default {
   },
   mounted() {
     changeBg()
-    document.body.onclick = changeBg
+    // document.body.onclick = changeBg
   },
 }
 </script>

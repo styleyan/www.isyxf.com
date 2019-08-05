@@ -8,7 +8,7 @@
           :key="key">
           <div class="article-col">
               <h2 class="article-title">
-                <nuxt-link :to="{path:`/article/${item.url}`}">{{item.title}}</nuxt-link>
+                <nuxt-link :to="{path:`/articles/fffff`}">{{item.title}}</nuxt-link>
               </h2>
               <div class="infos">
                 <i class="iconfont icon-date"></i>
@@ -16,7 +16,7 @@
               </div>
               <div class="brief">
                 {{item.brief}}
-                <nuxt-link class="btn-primary" :to="{path:`/article/${item.articleId}`}">阅读更多</nuxt-link>
+                <nuxt-link class="btn-primary" :to="{path:`/articles/wewewe`}">阅读更多</nuxt-link>
               </div>
               <div class="article-tags">
                 <i class="iconfont icon-tag"></i>&nbsp;
@@ -33,7 +33,7 @@
           :key="key">
           <div class="article-col">
               <h2 class="article-title">
-                <nuxt-link :to="{path:`/article/${item.url}`}">{{item.title}}</nuxt-link>
+                <nuxt-link :to="{path:`/articles/eeeee`}">{{item.title}}</nuxt-link>
               </h2>
               <div class="infos">
                 <i class="iconfont icon-date"></i>
@@ -41,7 +41,7 @@
               </div>
               <div class="brief">
                 {{item.brief}}
-                <nuxt-link class="btn-primary" :to="{path:`/article/${item.articleId}`}">阅读更多</nuxt-link>
+                <nuxt-link class="btn-primary" :to="{path:`/articles/sdfsdfsdf`}">阅读更多</nuxt-link>
               </div>
               <div class="article-tags">
                 <i class="iconfont icon-tag"></i>&nbsp;
