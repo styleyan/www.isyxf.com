@@ -1,7 +1,7 @@
 <template>
   <div>
     <sidebar></sidebar>
-    <canvas id="evanyou"></canvas>
+    <!-- <canvas id="evanyou"></canvas> -->
     <mobile-header></mobile-header>
     <div id="main" class="wrap-main">
       <nuxt />
@@ -14,7 +14,7 @@
 import MyFooter from '~/components/footer'
 import MobileHeader from '~/components/mobile-header'
 import Sidebar from '~/components/sidebar'
-import changeBg from './changeBg'
+// import changeBg from './changeBg'
 
 export default {
   components: {
@@ -23,7 +23,7 @@ export default {
     Sidebar
   },
   mounted() {
-    changeBg()
+    // changeBg()
     // document.body.onclick = changeBg
   },
 }
