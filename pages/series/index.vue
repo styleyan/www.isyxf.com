@@ -23,11 +23,12 @@ import PageTitle from '~/components/PageTitle'
 export default {
   components: { PageTitle },
   async asyncData({ $axios }) {
-    const result = await Promise.all([
+    const list = []
+
+    await Promise.all([
       $axios.get("/api/classify/list"),
       $axios.get("/api/client/archive")
     ]).then((data) => {
-      const list = []
       const firstRequest = data[0].result
       const secondRequest = data[1].result
 
@@ -36,10 +37,9 @@ export default {
         item.list = fl;
         list.push(item)
       })
-      return list
     })
 
-    return { list: result}
+    return { list }
   }
 }
 </script>
