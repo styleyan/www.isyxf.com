@@ -24,10 +24,10 @@ export default {
      * 服务端渲染
      */
     async asyncData({ $axios }) {
-        let data = await $axios.get("/api/maxim/list");
+        let data = await $axios.get("/api/maxim/list", {params: {pageNum: 1, pageSize: 200}});
 
         return {
-            list: data.result,
+            list: (data.result && data.result.list) || [],
         }
     }
 }

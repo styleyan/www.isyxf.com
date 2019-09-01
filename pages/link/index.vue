@@ -4,7 +4,7 @@
     <p class="desc">欢迎交换友链，特别是https站点会加上<i class="iconfont icon-https"></i>小绿锁</p> 
     <ul class="list"> 
       <li v-for="(item, key) in linkList" :key="key">
-        <i v-if="item.https" class="iconfont icon-https"></i>
+        <i class="iconfont icon-https" :class="{'not-https': !item.https}"></i>
         <a target="_blank" :href="item.websiteUrl">{{item.websiteName}}</a>
       </li> 
     </ul> 
@@ -31,6 +31,9 @@ export default {
 .links-pages {
   .icon-https {
     color #00bb00
+  }
+  .not-https{
+    color #888
   }
 
   .list{

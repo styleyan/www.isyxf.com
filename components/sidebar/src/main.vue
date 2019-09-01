@@ -17,12 +17,6 @@
           <span>归档</span>
         </nuxt-link>
       </li>
-      <li>
-        <nuxt-link to="/series">
-          <i class="iconfont icon-special"></i>
-          <span>专题</span>
-        </nuxt-link>
-      </li>
       <!-- <li>
         <router-link to="/articles">
           <i class="iconfont icon-qiwen"></i>
@@ -30,16 +24,22 @@
         </router-link>
       </li> -->
       <li>
+        <router-link to="/maxim">
+          <i class="iconfont icon-jianyan"></i>
+          <span>箴言</span>
+        </router-link>
+      </li>
+      <li>
         <router-link to="/books">
           <i class="iconfont icon-shudan" style="font-size:14px"></i>
           <span>书单</span>
         </router-link>
       </li>
       <li>
-        <router-link to="/maxim">
-          <i class="iconfont icon-jianyan"></i>
-          <span>箴言</span>
-        </router-link>
+        <nuxt-link to="/series">
+          <i class="iconfont icon-special"></i>
+          <span>专题</span>
+        </nuxt-link>
       </li>
       <li>
         <router-link to="/link">
