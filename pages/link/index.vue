@@ -1,13 +1,13 @@
 <template>
   <article class="links-pages">
     <page-title title="友情链接"></page-title>
-    <p class="desc">欢迎交换友链，特别是https站点会加上<i class="iconfont icon-https"></i>小绿锁</p> 
-    <ul class="list"> 
+    <p class="desc">欢迎交换友链，特别是https站点会加上<i class="iconfont icon-https"></i>小绿锁</p>
+    <ul class="list">
       <li v-for="(item, key) in linkList" :key="key">
         <i class="iconfont icon-https" :class="{'not-https': !item.https}"></i>
         <a target="_blank" :href="item.websiteUrl">{{item.websiteName}}</a>
-      </li> 
-    </ul> 
+      </li>
+    </ul>
   </article>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   components: { PageTitle },
   async asyncData({ $axios }) {
     let data = await $axios({
-      url: "/api/link/list"
+      url: "/client/link/list"
     });
 
     return {
@@ -51,7 +51,7 @@ export default {
     font-size 15px
 
     .icon-https{
-      margin 0 3px  
+      margin 0 3px
     }
   }
 }

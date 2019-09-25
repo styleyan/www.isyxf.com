@@ -21,12 +21,12 @@ export default {
    * 服务端渲染
    */
   async asyncData({ $axios }) {
-    const data = await $axios.get("/api/books/list", {params: {pageNum: 1, pageSize: 200}});
+    const data = await $axios.get("/client/books/list", {params: {pageNum: 1, pageSize: 200}});
     const unreadList = []
     const onreadList = []
     const alreadyReadList = []
     let list = (data.result && data.result.list) || []
-    
+
     list.forEach((item) => {
         // 0：未读, 1: 正在读, 2：已读
         switch (item.progress) {

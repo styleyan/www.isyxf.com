@@ -1,14 +1,14 @@
 <template>
   <article class="archive">
     <page-title title="按月存档"></page-title>
-    <div class="archive-item" 
+    <div class="archive-item"
       v-for="(archive, key) in archiveList"
       :key="key">
       <p>
         <strong class="classify">{{archive.classify}}</strong><span class="num">({{archive.list.length}})</span>
       </p>
       <ul>
-        <li 
+        <li
           v-for="(item, key) in archive.list"
           :key="key">
           <i class="iconfont icon-spot"></i>
@@ -25,7 +25,7 @@ import PageTitle from '~/components/PageTitle'
 export default {
   components: { PageTitle },
   async asyncData({ $axios }) {
-      let data = await $axios.get("/api/client/archive")
+      let data = await $axios.get("/client/archive/list")
       const archiveList = []
       let item = {}
 
@@ -77,10 +77,10 @@ export default {
 
   .classify{
     font-size 20px
-    font-weight 500  
+    font-weight 500
   }
   .num{
-    font-size 14px  
+    font-size 14px
     margin-left 4px
   }
   .classify,.num{

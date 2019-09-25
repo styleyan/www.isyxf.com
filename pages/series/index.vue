@@ -26,8 +26,8 @@ export default {
     const list = []
 
     await Promise.all([
-      $axios.get("/api/classify/list"),
-      $axios.get("/api/client/archive")
+      $axios.get("/client/classify/list"),
+      $axios.get("/client/archive/list")
     ]).then((data) => {
       const firstRequest = data[0].result
       const secondRequest = data[1].result
@@ -60,10 +60,10 @@ export default {
   }
   .desc{
     margin-top -6px
-    font-size 14px  
+    font-size 14px
     color #757575
   }
-  .ul{ 
+  .ul{
     font-size 15px
     margin-left -6px
 
@@ -71,7 +71,7 @@ export default {
       color #333
 
       &:hover{
-        text-decoration underline  
+        text-decoration underline
       }
     }
   }

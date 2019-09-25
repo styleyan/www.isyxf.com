@@ -68,7 +68,7 @@ export default {
    * 服务端渲染
    */
   async asyncData({ $axios }) {
-    let data = await $axios.get("/api/article/list", {params: {pageNum: 2, pageSize: 2}});
+    let data = await $axios.get("/client/article/list", {params: {pageNum: 1, pageSize: 10}});
 
     return {
       aritcleList: data.result.list,
@@ -84,7 +84,6 @@ export default {
   overflow auto
   margin-bottom 30px
   display:flex
-  
 }
 .article-index{
   padding: 20px 66px 20px 0;
@@ -100,17 +99,17 @@ export default {
       font-size 12px
       color #757575
   }
-  
+
   .article-tags{
     a{
       text-decoration underline
       text-underline-position under
       color #757575
-    }  
+    }
   }
 
   .infos{
-    margin-bottom 6px  
+    margin-bottom 6px
   }
   .iconfont{
       color #757575
@@ -132,7 +131,7 @@ export default {
 
   &:hover{
     background-color: #ce9e00;
-    border-color: #c49600;  
+    border-color: #c49600;
   }
 }
 </style>
