@@ -1,56 +1,32 @@
 <template>
   <section id="page-index">
     <page-title title="最近更新"></page-title>
-    <div class="row-container-wrapper">
-        <article
-          class="article-index"
-          v-for="(item, key) in aritcleList"
-          :key="key">
-          <div class="article-col">
-              <h2 class="article-title">
-                <nuxt-link :to="{path:`/articles/fffff`}">{{item.title}}</nuxt-link>
-              </h2>
-              <div class="infos">
-                <i class="iconfont icon-date"></i>
-                <time class="create-timer">{{item.gmtCreate}}</time>
-              </div>
-              <div class="brief">
-                {{item.brief}}
-                <nuxt-link class="btn-primary" :to="{path:`/articles/wewewe`}">阅读更多</nuxt-link>
-              </div>
-              <div class="article-tags">
-                <i class="iconfont icon-tag"></i>&nbsp;
-                <nuxt-link to="/">前端</nuxt-link>， <nuxt-link to="/">前端</nuxt-link>
-              </div>
+    <div v-for="(articles, index) in aritcleList" :key="index" class="row-container-wrapper">
+      <article
+        class="article-index"
+        v-for="(item, key) in articles"
+        :key="key">
+        <div class="article-col">
+          <h2 class="article-title">
+            <nuxt-link :to="{path:`/articles/${item.url}`}">{{item.title}}</nuxt-link>
+          </h2>
+          <div class="infos">
+            <i class="iconfont icon-date"></i>
+            <time class="create-timer">{{item.gmtCreate}}</time>
           </div>
-        </article>
-    </div>
-
-    <div class="row-container-wrapper">
-        <article
-          class="article-index"
-          v-for="(item, key) in aritcleList"
-          :key="key">
-          <div class="article-col">
-              <h2 class="article-title">
-                <nuxt-link :to="{path:`/articles/eeeee`}">{{item.title}}</nuxt-link>
-              </h2>
-              <div class="infos">
-                <i class="iconfont icon-date"></i>
-                <time class="create-timer">{{item.gmtCreate}}</time>
-              </div>
-              <div class="brief">
-                {{item.brief}}
-                <nuxt-link class="btn-primary" :to="{path:`/articles/sdfsdfsdf`}">阅读更多</nuxt-link>
-              </div>
-              <div class="article-tags">
-                <i class="iconfont icon-tag"></i>&nbsp;
-                <nuxt-link to="/">前端</nuxt-link>， <nuxt-link to="/">前端</nuxt-link>
-              </div>
+          <div class="brief">
+            <div class="brief-content" v-html="item.brief"></div>
+            <nuxt-link class="btn-primary" :to="{path:`/articles/${item.url}`}">阅读更多</nuxt-link>
           </div>
-        </article>
+          <div class="article-tags">
+            <i class="iconfont icon-tag"></i>&nbsp;
+            <span v-for="(tag, key) in item.tags.split(',')" :key="key">
+              <nuxt-link to="/">{{tag}}</nuxt-link>{{ key === (item.tags.split(',').length - 1) ? "" : "，"}}
+            </span>
+          </div>
+        </div>
+      </article>
     </div>
-
     <!-- <pagination :hasPreviousPage="hasPreviousPage" :hasNextPage="hasNextPage" :isShow="true"></pagination> -->
   </section>
 </template>
@@ -70,8 +46,15 @@ export default {
   async asyncData({ $axios }) {
     let data = await $axios.get("/client/article/list", {params: {pageNum: 1, pageSize: 10}});
 
+    const aritcleList = [];
+    const list = (data.result && data.result.list) || []
+
+    for(let i = 0, len = list.length; i < len; i+=2){
+      aritcleList.push(list.slice(i, i+2));
+    }
+
     return {
-      aritcleList: data.result.list,
+      aritcleList,
       hasNextPage: data.result.hasNextPage,
       hasPreviousPage: data.result.hasPreviousPage
     }
@@ -117,6 +100,9 @@ export default {
   .brief{
     font-size 15px
     padding-bottom 16px
+  }
+  .brief-content{
+    display inline-block
   }
 }
 
