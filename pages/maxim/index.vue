@@ -24,8 +24,7 @@ export default {
      * 服务端渲染
      */
     async asyncData({ $axios }) {
-        let data = await $axios.get("/client/maxim/list", {params: {pageNum: 1, pageSize: 10}});
-
+        let data = await $axios.get("/client/maxim/list", {params: {pageNum: 1, pageSize: 100}});
         return {
             list: (data.result && data.result.list) || [],
         }
