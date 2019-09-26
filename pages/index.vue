@@ -2,7 +2,7 @@
   <section id="page-index">
     <page-title title="最近更新"></page-title>
     <article-list :list="aritcleList"></article-list>
-    <nuxt-link class="btn-primary btn-more" to="/page/2">浏览更多文章</nuxt-link>
+    <nuxt-link v-if="hasNextPage" class="btn-primary btn-more" to="/page/2">浏览更多文章</nuxt-link>
     <global-footer></global-footer>
   </section>
 </template>
