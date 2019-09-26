@@ -27,18 +27,25 @@
         </div>
       </article>
     </div>
-    <!-- <pagination :hasPreviousPage="hasPreviousPage" :hasNextPage="hasNextPage" :isShow="true"></pagination> -->
+    <div v-if="isIndexPage">
+      <nuxt-link class="btn-primary btn-more" to="/page/2">浏览更多文章</nuxt-link>
+    </div>
+    <pagination v-else :hasPreviousPage="hasPreviousPage" :hasNextPage="hasNextPage" :isShow="true"></pagination>
+    <global-footer></global-footer>
   </section>
 </template>
 
 <script>
 import Pagination from '~/components/pagination'
 import PageTitle from '~/components/PageTitle'
+import GlobalFooter from '~/components/global-footer'
 
 export default {
-  components: { Pagination, PageTitle },
+  components: { Pagination, PageTitle, GlobalFooter },
   data() {
-    return {}
+    return {
+      isIndexPage: true,
+    }
   },
   /**
    * 服务端渲染
@@ -102,7 +109,10 @@ export default {
     padding-bottom 16px
   }
   .brief-content{
-    display inline-block
+    display inline
+    * {
+      display inline
+    }
   }
 }
 
@@ -119,6 +129,13 @@ export default {
     background-color: #ce9e00;
     border-color: #c49600;
   }
+}
+.btn-more {
+  display block
+  width 96px
+  margin-top 24px
+  padding 8px 12px
+  font-weight bold
 }
 </style>
 
