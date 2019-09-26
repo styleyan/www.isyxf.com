@@ -45,6 +45,11 @@ marked.setOptions({
 });
 
 export default {
+  head() {
+    return {
+      title: `Y. Jer 的虚拟笔记 - ${this.article.title}`,
+    }
+  },
   async asyncData({ $axios, params }) {
     const data = await $axios.get(`/client/article/${params.url}/detail`)
     const { article, nextArticle, prevArticle } = data.result

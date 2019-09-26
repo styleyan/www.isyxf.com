@@ -14,6 +14,11 @@ import GlobalFooter from '~/components/global-footer'
 
 export default {
   components: { PageTitle, ArticleList, GlobalFooter },
+  head() {
+    return {
+      title: 'Y. Jer 的虚拟笔记 - 最新文章',
+    }
+  },
   data() {
     return {}
   },

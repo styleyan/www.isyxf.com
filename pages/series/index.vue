@@ -21,6 +21,11 @@ import { Promise } from 'q';
 import PageTitle from '~/components/PageTitle'
 
 export default {
+  head() {
+    return {
+      title: 'Y. Jer 的虚拟笔记 - 专题',
+    }
+  },
   components: { PageTitle },
   async asyncData({ $axios }) {
     const list = []

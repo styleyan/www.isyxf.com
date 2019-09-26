@@ -19,6 +19,11 @@ import PageTitle from '~/components/PageTitle'
 // import { Timeline, TimelineItem, TimelineTitle } from 'vue-cute-timeline'
 
 export default {
+    head() {
+       return {
+        title: 'Y. Jer 的虚拟笔记 - 箴言',
+       }
+    },
     components: { PageTitle },
     /**
      * 服务端渲染

@@ -15,6 +15,11 @@
 import PageTitle from '~/components/PageTitle'
 
 export default {
+  head() {
+    return {
+      title: 'Y. Jer 的虚拟笔记 - 友链',
+    }
+  },
   components: { PageTitle },
   async asyncData({ $axios }) {
     let data = await $axios({

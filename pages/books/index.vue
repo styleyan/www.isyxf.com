@@ -16,6 +16,11 @@
 import PageTitle from '~/components/PageTitle'
 
 export default {
+    head() {
+       return {
+        title: 'Y. Jer 的虚拟笔记 - 书单',
+       }
+    },
    components: { PageTitle },
    /**
    * 服务端渲染
