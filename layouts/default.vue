@@ -11,14 +11,12 @@
 </template>
 
 <script>
-import MyFooter from '~/components/footer'
 import MobileHeader from '~/components/mobile-header'
 import Sidebar from '~/components/sidebar'
 // import changeBg from './changeBg'
 
 export default {
   components: {
-    MyFooter,
     MobileHeader,
     Sidebar
   },
