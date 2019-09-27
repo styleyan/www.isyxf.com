@@ -11,7 +11,6 @@
             <i class="iconfont icon-loudou"></i><span>19分钟阅读</span>
         </div>
         <div class="content md" v-html="renderHmtl"></div>
-
         <!-- 前一篇、后一篇 -->
         <div class="wrap-other-article" v-if="prevArticle || nextArticle">
           <div class="wrap-other-page">
@@ -26,23 +25,24 @@
 </template>
 
 <script>
-import hljs from 'highlight.js'
+// 包安装: npm i highlight.js marked -S
+// import hljs from 'highlight.js'
+// const marked = require('marked');
 
-const marked = require('marked');
-
-marked.setOptions({
-  renderer: new marked.Renderer(),
-  gfm: true,
-  tables: true,
-  breaks: false,
-  pedantic: false,
-  sanitize: false,
-  smartLists: true,
-  smartypants: false,
-  highlight: function (code) {
-    return hljs.highlightAuto(code).value;
-  }
-});
+// marked.setOptions({
+//   renderer: new marked.Renderer(),
+//   gfm: true,
+//   tables: true,
+//   breaks: false,
+//   pedantic: false,
+//   sanitize: false,
+//   smartLists: true,
+//   smartypants: false,
+//   highlight: function (code) {
+//     return hljs.highlightAuto(code).value;
+//   }
+// });
+//  使用: renderHmtl: marked(article.content)
 
 export default {
   head() {
@@ -59,7 +59,7 @@ export default {
       nextArticle,
       prevArticle,
       tags: article.tags.split(','),
-      renderHmtl: marked(article.content)
+      renderHmtl: article.content,
     }
   }
 }
