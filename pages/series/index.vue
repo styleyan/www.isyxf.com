@@ -9,7 +9,7 @@
         <ul class="ul">
           <li v-for="(at, key) in item.list" :key="key">
             <i class="iconfont icon-spot"></i>
-            <nuxt-link :to="{path:`/article/${at.articleId}`, query: { u: at.uuid }}">{{at.title}}</nuxt-link>
+            <nuxt-link :to="{path:`/articles/${at.url}`}">{{at.title}}</nuxt-link>
           </li>
         </ul>
     </article>

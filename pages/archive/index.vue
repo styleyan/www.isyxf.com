@@ -12,7 +12,7 @@
           v-for="(item, key) in archive.list"
           :key="key">
           <i class="iconfont icon-spot"></i>
-          <nuxt-link :to="{path:`/article/${item.articleId}`, query: { u: item.uuid }}">{{item.title}}</nuxt-link>&nbsp;
+          <nuxt-link :to="{path:`/articles/${item.url}`}">{{item.title}}</nuxt-link>&nbsp;
         </li>
       </ul>
     </div>
