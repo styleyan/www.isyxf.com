@@ -4,11 +4,11 @@
         <div class="meta-box gloab-a">
             <i class="iconfont icon-date"></i><time class="create-timer">{{article.gmtCreate}}</time>
             <i class="iconfont icon-tag"></i>
-              <span v-for="(tag, key) in tags" :key="key">
-                <nuxt-link to="/">{{tag}}</nuxt-link>{{ key === (tags.length - 1) ? "" : "，"}}
-              </span>
-            <i class="iconfont icon-bi"></i><span>9148字</span>
-            <i class="iconfont icon-loudou"></i><span>19分钟阅读</span>
+            <span v-for="(tag, key) in tags" :key="key">
+              <nuxt-link to="/">{{tag}}</nuxt-link>{{ key === (tags.length - 1) ? "" : "，"}}
+            </span>
+            <!-- <i class="iconfont icon-bi"></i><span>9148字</span>
+            <i class="iconfont icon-loudou"></i><span>19分钟阅读</span> -->
         </div>
         <div class="content md" v-html="renderHmtl"></div>
         <!-- 前一篇、后一篇 -->
