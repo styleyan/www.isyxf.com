@@ -1,7 +1,7 @@
 <template>
   <article class="links-pages">
     <page-title title="友情链接"></page-title>
-    <p class="desc">欢迎交换友链，特别是https站点会加上<i class="iconfont icon-https"></i>小绿锁</p>
+    <p class="desc">欢迎交换友链，特别是https站点会加上<i class="iconfont icon-https"></i>小黄锁</p>
     <ul class="list">
       <li v-for="(item, key) in linkList" :key="key">
         <i class="iconfont icon-https" :class="{'not-https': !item.https}"></i>
@@ -35,7 +35,7 @@ export default {
 <style lang="stylus">
 .links-pages {
   .icon-https {
-    color #00bb00
+    color #ffc402
   }
   .not-https{
     color #888

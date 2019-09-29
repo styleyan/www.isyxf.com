@@ -21,6 +21,8 @@
             </p>
           </div>
         </div>
+        <!-- 页脚 -->
+        <global-footer></global-footer>
     </div>
 </template>
 
@@ -43,8 +45,10 @@
 //   }
 // });
 //  使用: renderHmtl: marked(article.content)
+import GlobalFooter from '~/components/global-footer'
 
 export default {
+  components: { GlobalFooter },
   head() {
     return {
       title: `Y. Jer 的虚拟笔记 - ${this.article.title}`,
