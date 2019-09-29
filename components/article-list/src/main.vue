@@ -43,16 +43,17 @@ export default {
 .row-container-wrapper{
   overflow auto
   margin-bottom 30px
-  display:flex
+  display flex
 }
 .article-index{
-  padding: 20px 66px 20px 0;
+  padding 20px 66px 20px 0
   min-height 1px
-  overflow: auto;
-  flex: 1
+  overflow auto
+  flex 1
+  max-width 50%
 
   .article-col{
-    border-bottom: 1px dotted #eee;
+    border-bottom 1px dotted #eee;
     padding-bottom: 3px;
   }
   .create-timer, .article-tags{
