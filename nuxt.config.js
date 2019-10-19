@@ -21,9 +21,10 @@ module.exports = {
     ]
   },
   /*
-  ** Customize the progress-bar color
+  *  Customize the progress-bar color
+  *  进度条配置文档: https://zh.nuxtjs.org/api/configuration-loading/
   */
-  loading: { color: '#fff' },
+  loading: false,
   /*
   ** Global CSS
   */
@@ -34,7 +35,8 @@ module.exports = {
   */
   plugins: [
     '~/plugins/axios',
-    {src:'~/plugins/loading', ssr:false }
+    // 暂时不适用自定进度条
+    // {src:'~/plugins/loading', ssr:false }
   ],
   /*
   ** Nuxt.js dev-modules
