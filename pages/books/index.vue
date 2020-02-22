@@ -56,12 +56,12 @@ export default {
                 list: onreadList
             },
             {
-                type: "已读",
-                list: alreadyReadList
-            },
-            {
                 type: "未读",
                 list: unreadList
+            },
+            {
+                type: "已读",
+                list: alreadyReadList
             }
         ]
     }

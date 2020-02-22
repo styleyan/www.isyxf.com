@@ -52,6 +52,7 @@ export default {
     line-height: 1.5;
     border-radius: 3px;
     padding: 1px 5px;
+    display inline-block
 
   &:hover{
     background-color: #ce9e00;

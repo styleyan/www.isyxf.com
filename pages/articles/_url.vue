@@ -1,6 +1,6 @@
 <template>
     <div class="articles-detail">
-        <h1 class="articles-title"><nuxt-link :to="`/articles/${article.url}`">{{article.title}}</nuxt-link></h1>
+        <h1 class="articles-title">{{article.title}}</h1>
         <div class="meta-box gloab-a">
             <i class="iconfont icon-date"></i><time class="create-timer">{{article.gmtCreate}}</time>
             <i class="iconfont icon-tag"></i>
