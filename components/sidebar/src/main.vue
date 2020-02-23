@@ -17,6 +17,12 @@
           <span>归档</span>
         </nuxt-link>
       </li>
+      <li>
+        <nuxt-link to="/series">
+          <i class="iconfont icon-special"></i>
+          <span>专题</span>
+        </nuxt-link>
+      </li>
       <!-- <li>
         <router-link to="/articles">
           <i class="iconfont icon-qiwen"></i>
@@ -36,10 +42,10 @@
         </router-link>
       </li>
       <li>
-        <nuxt-link to="/series">
-          <i class="iconfont icon-special"></i>
-          <span>专题</span>
-        </nuxt-link>
+        <router-link to="/movies">
+          <i class="iconfont icon-movies"></i>
+          <span>影视</span>
+        </router-link>
       </li>
       <li>
         <router-link to="/link">

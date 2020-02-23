@@ -39,13 +39,13 @@ export default {
 <style lang="stylus">
 .maxim{
     dl{
-        margin 0 66px 30px 0
+        margin 0 66px 26px 0
     }
     dt {
-        font-size 22px
+        font-size 14px
     }
     dd {
-        font-size 14px
+        font-size 16px
     }
 }
 </style>
