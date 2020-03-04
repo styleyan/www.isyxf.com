@@ -1,11 +1,15 @@
 <template>
-    <div class="books-page">
+    <div class="movies-page">
         <page-title title="个人影视"></page-title>
         <dl v-for="item in list" :key="item.id">
             <dt>{{item.type}}</dt>
             <dd>
                 <ul>
-                    <li v-for="item in item.list" :key="item.id"><i class="iconfont icon-spot"></i>{{item.movieName}}</li>
+                    <li v-for="item in item.list" :key="item.id">
+                        <i v-if="item.boby" class="iconfont icon-baby"></i>
+                        <i v-else class="iconfont icon-spot"></i>
+                        {{item.movieName}} 
+                    </li>
                 </ul>
             </dd>
         </dl>
@@ -63,7 +67,7 @@ export default {
 }
 </script>
 <style lang="stylus">
-.books-page{
+.movies-page{
     dl{
         margin-bottom 22px
     }
@@ -73,6 +77,9 @@ export default {
     }
     dd{
         font-size 14px
+    }
+    .icon-baby{
+        color #0b0
     }
 }
 </style>

@@ -5,7 +5,11 @@
             <dt>{{item.type}}</dt>
             <dd>
                 <ul>
-                    <li v-for="item in item.list" :key="item.id"><i class="iconfont icon-spot"></i>{{item.bookName}}</li>
+                    <li v-for="item in item.list" :key="item.id">
+                        <i v-if="item.boby" class="iconfont icon-baby"></i>
+                        <i v-else class="iconfont icon-spot"></i>
+                        {{item.bookName}}
+                    </li>
                 </ul>
             </dd>
         </dl>
@@ -79,6 +83,9 @@ export default {
     }
     dd{
         font-size 14px
+    }
+    .icon-baby{
+        color #0b0
     }
 }
 </style>
