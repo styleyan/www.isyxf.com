@@ -76,7 +76,8 @@ export default {
   margin-right 66px
   .articles-title{
     margin-top 30px
-    font-size 28px
+    font-size: 1.5em;
+    color #555
     a {
       color #2a2935
       &:hover{

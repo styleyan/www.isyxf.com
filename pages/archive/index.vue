@@ -69,7 +69,7 @@ export default {
 
   ul {
     margin-left -4px
-    font-size 16px
+    font-size 14px
   }
 
   a{
